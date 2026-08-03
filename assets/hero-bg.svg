@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 312" preserveAspectRatio="xMidYMax slice">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFF8EE"/>
+      <stop offset="100%" stop-color="#F0F5E8"/>
+    </linearGradient>
+    <linearGradient id="hillGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8BAA3D"/>
+      <stop offset="100%" stop-color="#6B8C2A"/>
+    </linearGradient>
+    <linearGradient id="hillGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A3BE5C"/>
+      <stop offset="100%" stop-color="#8BAA3D"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.72" cy="0.18" r="0.45">
+      <stop offset="0%" stop-color="#F5A623" stop-opacity="0.15"/>
+      <stop offset="60%" stop-color="#F5A623" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#F5A623" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="treeGrad1" cx="0.5" cy="0.6" r="0.5">
+      <stop offset="0%" stop-color="#7A9E30"/>
+      <stop offset="100%" stop-color="#5C7D1F"/>
+    </radialGradient>
+    <radialGradient id="treeGrad2" cx="0.5" cy="0.6" r="0.5">
+      <stop offset="0%" stop-color="#90B044"/>
+      <stop offset="100%" stop-color="#6E9228"/>
+    </radialGradient>
+    <radialGradient id="treeGrad3" cx="0.5" cy="0.6" r="0.5">
+      <stop offset="0%" stop-color="#688A25"/>
+      <stop offset="100%" stop-color="#4E6E18"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="820" height="312" fill="url(#bgGrad)"/>
+  <rect width="820" height="312" fill="url(#sunGlow)"/>
+
+  <path d="M0 260 Q150 210 300 240 Q450 200 580 230 Q700 210 820 225 L820 312 L0 312 Z" fill="#C8D8A0" opacity="0.4"/>
+  <path d="M0 270 Q120 230 250 255 Q400 225 520 250 Q660 228 820 245 L820 312 L0 312 Z" fill="url(#hillGrad2)" opacity="0.6"/>
+
+  <ellipse cx="580" cy="200" rx="28" ry="50" fill="#7A9E30" opacity="0.5"/>
+  <ellipse cx="620" cy="195" rx="32" ry="55" fill="#688A25" opacity="0.5"/>
+  <ellipse cx="660" cy="198" rx="26" ry="48" fill="#90B044" opacity="0.5"/>
+
+  <rect x="552" y="210" width="6" height="40" rx="2" fill="#8B6B3E"/>
+  <ellipse cx="555" cy="195" rx="22" ry="38" fill="url(#treeGrad1)" opacity="0.8"/>
+  <rect x="592" y="200" width="7" height="50" rx="2" fill="#7A5C30"/>
+  <ellipse cx="596" cy="180" rx="28" ry="45" fill="url(#treeGrad2)" opacity="0.85"/>
+  <rect x="637" y="205" width="6" height="45" rx="2" fill="#8B6B3E"/>
+  <ellipse cx="640" cy="185" rx="25" ry="42" fill="url(#treeGrad3)" opacity="0.8"/>
+  <rect x="677" y="208" width="7" height="42" rx="2" fill="#7A5C30"/>
+  <ellipse cx="680" cy="190" rx="30" ry="44" fill="url(#treeGrad1)" opacity="0.85"/>
+  <rect x="720" y="212" width="6" height="38" rx="2" fill="#8B6B3E"/>
+  <ellipse cx="723" cy="195" rx="24" ry="40" fill="url(#treeGrad2)" opacity="0.8"/>
+  <rect x="757" y="210" width="6" height="40" rx="2" fill="#7A5C30"/>
+  <ellipse cx="760" cy="192" rx="26" ry="42" fill="url(#treeGrad3)" opacity="0.85"/>
+  <rect x="792" y="215" width="5" height="35" rx="2" fill="#8B6B3E"/>
+  <ellipse cx="795" cy="200" rx="22" ry="36" fill="url(#treeGrad1)" opacity="0.7"/>
+
+  <path d="M0 280 Q200 255 400 272 Q550 258 700 268 Q770 262 820 270 L820 312 L0 312 Z" fill="url(#hillGrad)"/>
+
+  <path d="M30 290 Q35 278 40 290" stroke="#6B8C2A" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <path d="M80 285 Q85 273 90 285" stroke="#7A9E30" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <path d="M150 288 Q155 276 160 288" stroke="#6B8C2A" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <path d="M320 282 Q325 270 330 282" stroke="#7A9E30" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <path d="M380 286 Q385 274 390 286" stroke="#6B8C2A" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <path d="M460 284 Q465 273 470 284" stroke="#7A9E30" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+  <path d="M500 80 Q505 74 510 78 Q515 74 520 80" stroke="#E8921C" stroke-width="1.8" fill="none" opacity="0.5"/>
+  <path d="M530 65 Q534 60 538 63 Q542 60 546 65" stroke="#E8921C" stroke-width="1.5" fill="none" opacity="0.4"/>
+
+  <circle cx="710" cy="60" r="30" fill="#F5A623" opacity="0.25"/>
+  <circle cx="710" cy="60" r="18" fill="#F5A623" opacity="0.4"/>
+  <line x1="710" y1="30" x2="710" y2="18" stroke="#F5A623" stroke-width="2" opacity="0.3"/>
+  <line x1="735" y1="38" x2="742" y2="28" stroke="#F5A623" stroke-width="2" opacity="0.3"/>
+  <line x1="740" y1="60" x2="752" y2="60" stroke="#F5A623" stroke-width="2" opacity="0.3"/>
+  <line x1="735" y1="82" x2="742" y2="92" stroke="#F5A623" stroke-width="2" opacity="0.3"/>
+  <line x1="685" y1="38" x2="678" y2="28" stroke="#F5A623" stroke-width="2" opacity="0.3"/>
+  <line x1="680" y1="60" x2="668" y2="60" stroke="#F5A623" stroke-width="2" opacity="0.3"/>
+  <line x1="685" y1="82" x2="678" y2="92" stroke="#F5A623" stroke-width="2" opacity="0.3"/>
+
+  <path d="M200 312 Q210 290 230 280 Q260 268 240 255 Q220 242 240 230" stroke="#D4C4A0" stroke-width="4" fill="none" opacity="0.4" stroke-linecap="round"/>
+
+  <g transform="translate(15, 265) scale(0.6)" opacity="0.3">
+    <path d="M0 30 Q15 0 30 30 Q15 20 0 30 Z" fill="#8BAA3D"/>
+    <path d="M20 25 Q35 -5 50 25 Q35 15 20 25 Z" fill="#7A9E30"/>
+    <path d="M40 28 Q55 -2 70 28 Q55 18 40 28 Z" fill="#8BAA3D"/>
+  </g>
+</svg>
