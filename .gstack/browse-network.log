@@ -1,0 +1,4 @@
+[2026-08-05T00:18:04.289Z] GET http://localhost:8742/index.html → 200 (7ms, ?B)
+[2026-08-05T00:18:04.299Z] GET http://localhost:8742/css/style.css → 200 (3ms, ?B)
+[2026-08-05T00:18:04.300Z] GET http://localhost:8742/assets/logo.jpg → 200 (3ms, ?B)
+[2026-08-05T00:18:04.309Z] GET http://localhost:8742/assets/hero-bg.svg → 200 (1ms, ?B)
