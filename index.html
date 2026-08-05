@@ -19,7 +19,8 @@
           <span class="brand-en">Holistic Health Self-Management Association</span>
         </span>
       </a>
-      <nav class="site-nav">
+      <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">☰</button>
+      <nav class="site-nav" id="siteNav">
         <a href="#about">關於協會</a>
         <a href="#trilife">三生健康</a>
         <a href="#mission">協會任務</a>
@@ -326,6 +327,37 @@
     <p>南投縣魚池鄉五城村華龍巷 58-1 號｜0937-043378 張秘書長｜healthselfmanage@gmail.com</p>
     <p style="opacity:0.7;">No. 58-1, Hualong Ln., Wucheng Vil., Yuchi Township, Nantou County 555, Taiwan (R.O.C.)</p>
   </footer>
+
+  <!-- 手機底部快速行動列 -->
+  <div class="mobile-actions">
+    <a href="tel:+886937043378"><span class="ma-ico">📞</span>撥打電話</a>
+    <a href="mailto:healthselfmanage@gmail.com"><span class="ma-ico">✉️</span>寫信洽詢</a>
+    <a class="ma-primary" href="#join"><span class="ma-ico">🌱</span>加入我們</a>
+  </div>
+
+  <!-- 回到頂端 -->
+  <a class="to-top" href="#top" aria-label="回到頂端">↑</a>
+
+  <script>
+    var navToggle = document.getElementById('navToggle');
+    var siteNav = document.getElementById('siteNav');
+    navToggle.addEventListener('click', function () {
+      var open = siteNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
+      navToggle.textContent = open ? '✕' : '☰';
+    });
+    siteNav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        siteNav.classList.remove('open');
+        navToggle.textContent = '☰';
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    var toTop = document.querySelector('.to-top');
+    window.addEventListener('scroll', function () {
+      toTop.classList.toggle('show', window.scrollY > 600);
+    }, { passive: true });
+  </script>
 
 </body>
 </html>

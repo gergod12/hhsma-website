@@ -592,13 +592,191 @@ table.org-table tr:hover td { background: rgba(122, 182, 72, 0.13); }
   margin-bottom: 0.6rem;
 }
 
-/* ---------- 響應式 ---------- */
+/* ---------- 漢堡選單按鈕（桌機隱藏） ---------- */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--forest-dark);
+  cursor: pointer;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+}
+
+.nav-toggle:active { background: rgba(122, 182, 72, 0.15); }
+
+/* ---------- 回到頂端 ---------- */
+.to-top {
+  position: fixed;
+  right: 1.1rem;
+  bottom: 1.4rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--forest-mid);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(45, 74, 34, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.25s, transform 0.25s;
+  z-index: 90;
+}
+
+.to-top.show { opacity: 1; pointer-events: auto; transform: none; }
+
+/* ---------- 手機底部快速行動列（桌機隱藏） ---------- */
+.mobile-actions { display: none; }
+
+/* ============================================
+   手機版重新設計（≤ 860px）
+   原則：單欄流、拇指可及、觸控目標 ≥ 44px
+   ============================================ */
 @media (max-width: 860px) {
-  .about-grid,
-  .org-columns,
-  .contact-grid { grid-template-columns: 1fr; }
-  .tri-grid, .join-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
-  .hero { padding: 4rem 1.2rem 9rem; }
-  .brand .brand-name { font-size: 0.95rem; }
-  .site-nav { width: 100%; justify-content: center; }
+  body { padding-bottom: 62px; } /* 預留底部快速行動列高度 */
+
+  /* — 導覽：品牌列＋漢堡選單 — */
+  .nav-inner { padding: 0.55rem 1rem; }
+  .brand { gap: 0.5rem; }
+  .brand img { height: 38px; width: 38px; }
+  .brand .brand-name { font-size: 0.92rem; }
+  .brand .brand-en { display: none; }
+  .nav-toggle { display: block; }
+  .site-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.3rem 0 0.5rem;
+  }
+  .site-nav.open { display: flex; }
+  .site-nav a {
+    padding: 0.85rem 0.6rem;
+    font-size: 1.02rem;
+    border-bottom: 1px solid rgba(45, 74, 34, 0.08);
+    border-radius: 0;
+  }
+  .site-nav a:last-child { border-bottom: 0; }
+
+  /* — Hero：縮短高度、按鈕全寬好按 — */
+  .hero { padding: 3rem 1.4rem 8.5rem; }
+  .hero h1 { letter-spacing: 0.12em; }
+  .hero .hero-sub { margin-top: 0.8rem; }
+  .hero .hero-org { margin-top: 1.2rem; font-size: 0.95rem; }
+  .hero .hero-cta {
+    margin-top: 1.8rem;
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 0.7rem;
+  }
+  .btn { text-align: center; padding: 0.85rem 1.2rem; font-size: 1.02rem; }
+
+  /* — 區塊節奏：縮小留白、標題適配 — */
+  .section { padding: 2.6rem 1.2rem 0.6rem; }
+  .section-alt-inner { padding: 2.6rem 1.2rem 2rem; }
+  .section-title { font-size: 1.45rem; letter-spacing: 0.12em; }
+  .section-lead { font-size: 0.95rem; margin-bottom: 1.6rem; }
+
+  /* — 全部改單欄 — */
+  .about-grid, .org-columns, .contact-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+  .tri-grid, .join-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .event-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .about-grid { margin-bottom: 1.8rem; }
+  .tri-grid, .event-grid, .mission-list, .faq-list { margin-bottom: 1.8rem; }
+  .tri-card { padding: 1.4rem 1.2rem; }
+  .tri-card:hover { transform: none; }
+  .mission-list li { padding: 0.9rem 1rem 0.9rem 3.4rem; font-size: 0.95rem; }
+  .mission-list li::before { left: 0.8rem; width: 1.8rem; height: 1.8rem; font-size: 0.9rem; }
+
+  /* — 理監事表格 → 名片式卡片 — */
+  table.org-table, table.org-table tbody, table.org-table tr, table.org-table td {
+    display: block;
+    width: 100%;
+  }
+  table.org-table thead { display: none; }
+  table.org-table { background: transparent; box-shadow: none; border-radius: 0; }
+  table.org-table tr {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+  table.org-table tr:nth-child(even) td,
+  table.org-table tr:hover td { background: transparent; }
+  table.org-table tr td { padding: 0; border: none; background: transparent; }
+  table.org-table tr td:nth-child(1) {
+    display: inline-block;
+    width: auto;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--forest-mid);
+    border-radius: 999px;
+    padding: 0.12rem 0.7rem;
+    margin-bottom: 0.35rem;
+    letter-spacing: 0.08em;
+  }
+  table.org-table tr td:nth-child(2) { font-size: 1.08rem; font-weight: 700; color: var(--forest-dark); }
+  table.org-table tr td:nth-child(3) { font-size: 0.85rem; color: var(--text-soft); margin-top: 0.1rem; }
+  .table-wrap { overflow: visible; margin-bottom: 1.2rem; }
+  .org-note { margin: -0.2rem 0 1.5rem; }
+
+  /* — FAQ：加大觸控目標 — */
+  .faq-list summary { padding: 1rem 2.8rem 1rem 1.1rem; font-size: 0.98rem; }
+  .faq-list .faq-body { padding: 0.8rem 1.1rem 1.1rem; }
+
+  /* — 聯絡與入會 — */
+  .contact-card { padding: 1.4rem 1.2rem; }
+  .contact-card a { word-break: break-all; }
+  .join-steps { padding: 1.3rem 1.2rem; margin-bottom: 1.8rem; }
+
+  /* — 底部快速行動列：拇指黃金區 — */
+  .mobile-actions {
+    display: grid;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 95;
+    grid-template-columns: repeat(3, 1fr);
+    background: rgba(253, 251, 247, 0.97);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(45, 74, 34, 0.15);
+    box-shadow: 0 -2px 12px rgba(45, 74, 34, 0.08);
+    padding-bottom: env(safe-area-inset-bottom); /* iPhone 底部手勢條 */
+  }
+  .mobile-actions a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+    padding: 0.5rem 0 0.6rem;
+    text-decoration: none;
+    color: var(--forest-dark);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+  }
+  .mobile-actions a .ma-ico { font-size: 1.3rem; line-height: 1.25; }
+  .mobile-actions a.ma-primary { color: #fff; background: var(--forest-mid); font-weight: 700; }
+
+  .to-top { bottom: 76px; right: 0.9rem; width: 42px; height: 42px; }
+
+  .site-footer { padding: 1.8rem 1.2rem; font-size: 0.8rem; }
 }
