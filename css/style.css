@@ -667,7 +667,11 @@ table.org-table tr:hover td { background: rgba(122, 182, 72, 0.13); }
 
   /* — Hero：縮短高度、按鈕全寬好按 — */
   .hero { padding: 3rem 1.4rem 8.5rem; }
-  .hero h1 { letter-spacing: 0.12em; }
+  .hero h1 {
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+    font-size: clamp(1.5rem, 8vw, 2.2rem);
+  }
   .hero .hero-sub { margin-top: 0.8rem; }
   .hero .hero-org { margin-top: 1.2rem; font-size: 0.95rem; }
   .hero .hero-cta {
