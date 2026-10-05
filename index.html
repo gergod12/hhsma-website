@@ -62,9 +62,18 @@
           <dt>成立日期</dt><dd>民國 115 年 2 月 7 日</dd>
           <dt>性質</dt><dd>全國性非營利社會團體</dd>
           <dt>主管機關</dt><dd>內政部</dd>
+          <dt>立案字號</dt><dd>台內團字第 1150007532 號</dd>
           <dt>會址</dt><dd>南投縣魚池鄉五城村華龍巷 58-1 號</dd>
           <dt>會員現況</dt><dd>來自全台十餘縣市的夥伴持續成長中</dd>
         </dl>
+        <a class="cert" id="certLink" href="assets/certificate.jpg" target="_blank" rel="noopener">
+          <img src="assets/certificate.jpg" alt="內政部核發之全國性及區級人民團體立案證書" loading="lazy" width="1000" height="1414">
+          <span class="cert-text">
+            <strong>內政部立案證書</strong>
+            <span>全國性及區級人民團體</span>
+            <span class="cert-more">點擊檢視證書 →</span>
+          </span>
+        </a>
       </aside>
     </div>
   </section>
@@ -342,6 +351,11 @@
   <!-- 回到頂端 -->
   <a class="to-top" href="#top" aria-label="回到頂端">↑</a>
 
+  <dialog class="cert-dialog" id="certDialog" aria-label="內政部立案證書">
+    <img src="assets/certificate.jpg" alt="內政部核發之全國性及區級人民團體立案證書（台內團字第 1150007532 號）" loading="lazy" width="1000" height="1414">
+    <button type="button" class="cert-close" aria-label="關閉">✕</button>
+  </dialog>
+
   <script>
     var navToggle = document.getElementById('navToggle');
     var siteNav = document.getElementById('siteNav');
@@ -361,6 +375,14 @@
     window.addEventListener('scroll', function () {
       toTop.classList.toggle('show', window.scrollY > 600);
     }, { passive: true });
+    var certDialog = document.getElementById('certDialog');
+    if (certDialog.showModal) {
+      document.getElementById('certLink').addEventListener('click', function (e) {
+        e.preventDefault();
+        certDialog.showModal();
+      });
+      certDialog.addEventListener('click', function () { certDialog.close(); });
+    }
   </script>
 
 </body>
