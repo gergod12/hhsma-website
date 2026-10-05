@@ -35,7 +35,7 @@ body {
   letter-spacing: 0.02em;
 }
 
-img { max-width: 100%; }
+img { max-width: 100%; height: auto; }
 
 /* ---------- 導覽列 ---------- */
 .site-header {
