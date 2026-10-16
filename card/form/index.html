@@ -78,7 +78,7 @@
       <li><b>協會版名片</b>：統一版型，標示您在協會的職務。</li>
       <li><b>個人版名片</b>：依您現有的單位與頭銜製作，可沿用原名片設計或改用協會風格。</li>
     </ol>
-    <p>兩款都會做成可在 LINE 轉傳的圖片與數位名片網頁，點開即可撥號、存入聯絡人；電子檔可自行送印。理事長的成品可先參考：<a href="../" style="color:var(--forest-mid)">healthselfmanage.org.tw/card/</a></p>
+    <p>兩款都會做成可在 LINE 轉傳的圖片與數位名片網頁，點開即可撥號、存入聯絡人。數位名片僅提供給本人以連結分享，不會刊登在協會網站上；電子檔可自行送印。理事長的成品可先參考：<a href="../" style="color:var(--forest-mid)">healthselfmanage.org.tw/card/</a></p>
     <p class="note">填寫約 3 分鐘。按下「送到 LINE」後，請在同一個對話附上您原本名片的正反面照片。資料僅供名片製作使用。</p>
   </div>
 
@@ -130,7 +130,7 @@
 
   <section class="card">
     <h2>4. 同意事項</h2>
-    <div class="f" data-key="consent"><label class="consent"><input type="checkbox" id="consent" name="consent"><span class="req">我同意協會使用以上資料製作名片，並將數位名片網頁發布於協會網站</span></label><div class="err">請勾選同意後再送出</div></div>
+    <div class="f" data-key="consent"><label class="consent"><input type="checkbox" id="consent" name="consent"><span class="req">我同意協會使用以上資料製作數位名片</span></label><div class="err">請勾選同意後再送出</div></div>
   </section>
 
   <div class="actions">
@@ -192,7 +192,7 @@
     L.push('個人版風格：' + picked('style'));
     if (val('notes')) L.push('備註：' + val('notes').replace(/\n+/g, '；'));
     L.push('');
-    L.push('已同意協會使用資料製作名片。名片照片隨後上傳或附上。');
+    L.push('已同意協會使用資料製作數位名片。名片照片隨後上傳或附上。');
     return L.join('\n');
   }
   function validate() {
