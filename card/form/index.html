@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>理監事名片製作需求調查｜全人健康自主管理推廣協會</title>
+<title>數位名片製作｜全人健康自主管理推廣協會</title>
 <meta name="description" content="協會為每位理監事製作協會版與個人版數位名片，請花 3 分鐘填寫資料。">
-<meta property="og:title" content="理監事名片製作需求調查">
+<meta property="og:title" content="數位名片製作">
 <meta property="og:description" content="請花 3 分鐘填寫，協會為您製作協會版與個人版數位名片。">
 <meta property="og:image" content="https://healthselfmanage.org.tw/card/og.png">
 <link rel="icon" type="image/jpeg" href="../../assets/logo.jpg">
@@ -69,7 +69,7 @@
 <main class="page">
   <header class="top">
     <img src="../../assets/logo.jpg" alt="">
-    <div><div class="org">全人健康自主管理推廣協會</div><h1>理監事名片製作需求調查</h1></div>
+    <div><div class="org">全人健康自主管理推廣協會</div><h1>數位名片製作</h1></div>
   </header>
 
   <div class="intro">
@@ -176,7 +176,7 @@
 
   function compose() {
     var L = [];
-    L.push('【理監事名片製作需求】');
+    L.push('【數位名片製作】');
     L.push('姓名：' + val('name') + (val('nameEn') ? '（' + val('nameEn') + '）' : ''));
     L.push('協會職務：' + picked('role'));
     L.push('手機：' + val('phone'));
@@ -222,7 +222,7 @@
   document.getElementById('copy').addEventListener('click', function () { if (!validate()) return; var t = compose(); showAfter(t); copyText(t); });
   document.getElementById('mail').addEventListener('click', function (e) {
     e.preventDefault(); if (!validate()) return; var t = compose(); showAfter(t);
-    window.location.href = 'mailto:healthselfmanage@gmail.com?subject=' + encodeURIComponent('理監事名片製作需求：' + val('name')) + '&body=' + encodeURIComponent(t + '\n\n（請將名片正反面照片附加在此信件）');
+    window.location.href = 'mailto:healthselfmanage@gmail.com?subject=' + encodeURIComponent('數位名片製作：' + val('name')) + '&body=' + encodeURIComponent(t + '\n\n（請將名片正反面照片附加在此信件）');
   });
 })();
 </script>
