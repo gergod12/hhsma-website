@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>理監事名片製作需求調查｜全人健康自主管理推廣協會</title>
-<meta name="description" content="協會為每位理監事製作協會版與個人版名片，請花 3 分鐘填寫資料。">
+<meta name="description" content="協會為每位理監事製作協會版與個人版數位名片，請花 3 分鐘填寫資料。">
 <meta property="og:title" content="理監事名片製作需求調查">
-<meta property="og:description" content="請花 3 分鐘填寫，協會為您製作協會版與個人版名片。">
+<meta property="og:description" content="請花 3 分鐘填寫，協會為您製作協會版與個人版數位名片。">
 <meta property="og:image" content="https://healthselfmanage.org.tw/card/og.png">
 <link rel="icon" type="image/jpeg" href="../../assets/logo.jpg">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,12 +73,12 @@
   </header>
 
   <div class="intro">
-    <p>各位理監事您好，協會將為每位理監事製作兩套名片，費用由協會負擔：</p>
+    <p>各位理監事您好，協會將為每位理監事製作兩套數位名片（電子檔），不含印刷：</p>
     <ol>
       <li><b>協會版名片</b>：統一版型，標示您在協會的職務。</li>
-      <li><b>個人版名片</b>：依您現有的單位與頭銜重新設計，可沿用原名片風格。</li>
+      <li><b>個人版名片</b>：依您現有的單位與頭銜製作，可沿用原名片設計或改用協會風格。</li>
     </ol>
-    <p>另附一頁可在 LINE 轉傳的數位名片網頁，點開即可撥號、存入聯絡人。理事長的成品可先參考：<a href="../" style="color:var(--forest-mid)">healthselfmanage.org.tw/card/</a></p>
+    <p>兩款都會做成可在 LINE 轉傳的圖片與數位名片網頁，點開即可撥號、存入聯絡人；電子檔可自行送印。理事長的成品可先參考：<a href="../" style="color:var(--forest-mid)">healthselfmanage.org.tw/card/</a></p>
     <p class="note">填寫約 3 分鐘。按下「送到 LINE」後，請在同一個對話附上您原本名片的正反面照片。資料僅供名片製作使用。</p>
   </div>
 
@@ -119,27 +119,13 @@
   </section>
 
   <section class="card">
-    <h2>3. 製作需求</h2>
-    <div class="f" data-key="kinds"><span class="q req">需要哪些版本？</span><div class="hint">可複選</div>
-      <div class="opts" id="kinds">
-        <label><input type="checkbox" name="kinds" value="協會版實體名片" checked>協會版實體名片</label>
-        <label><input type="checkbox" name="kinds" value="個人版實體名片" checked>個人版實體名片</label>
-        <label><input type="checkbox" name="kinds" value="數位名片網頁（LINE 轉傳用）" checked>數位名片網頁（LINE 轉傳用）</label>
-      </div><div class="err">請至少選擇一項</div></div>
+    <h2>3. 個人版風格</h2>
     <div class="f" data-key="style"><span class="q req">個人版名片風格</span>
       <div class="opts" id="style">
-        <label><input type="radio" name="style" value="沿用原名片的配色與版型">沿用原名片的配色與版型</label>
-        <label><input type="radio" name="style" value="改用協會的綠橘配色">改用協會的綠橘配色</label>
-        <label><input type="radio" name="style" value="全新設計，請先提案">全新設計，請先提案給我看</label>
-        <label><input type="radio" name="style" value="不需要個人版">不需要個人版</label>
+        <label><input type="radio" name="style" value="沿用原名片設計">沿用原名片設計</label>
+        <label><input type="radio" name="style" value="協會風格">協會風格（綠橘配色）</label>
       </div><div class="err">請選擇一項</div></div>
-    <div class="f" data-key="qty"><span class="q req">實體名片印刷數量</span>
-      <div class="opts" id="qty">
-        <label><input type="radio" name="qty" value="每款 100 張">每款 100 張</label>
-        <label><input type="radio" name="qty" value="每款 200 張">每款 200 張</label>
-        <label><input type="radio" name="qty" value="暫不印刷，只要電子檔">暫不印刷，只要電子檔</label>
-      </div><div class="err">請選擇一項</div></div>
-    <div class="f"><label class="q" for="notes">其他需求或備註</label><textarea id="notes" name="notes" placeholder="例：姓名要用特定字體、不印電話、另加第二支電話"></textarea></div>
+    <div class="f"><label class="q" for="notes">其他需求或備註</label><textarea id="notes" name="notes" placeholder="例：姓名要用特定字體、不放電話、另加第二支電話"></textarea></div>
   </section>
 
   <section class="card">
@@ -202,9 +188,7 @@
     if (val('orgContact')) L.push('單位電話／地址：' + val('orgContact').replace(/\n+/g, '；'));
     if (val('links')) L.push('個人版網址：' + val('links').replace(/\n+/g, '、'));
     L.push('');
-    L.push('需要版本：' + pickedAll('kinds').join('、'));
     L.push('個人版風格：' + picked('style'));
-    L.push('印刷數量：' + picked('qty'));
     if (val('notes')) L.push('備註：' + val('notes').replace(/\n+/g, '；'));
     L.push('');
     L.push('已同意協會使用資料製作名片。名片照片隨後附上。');
@@ -217,9 +201,7 @@
     mark('role', !picked('role'));
     mark('phone', !/^09\d{2}-?\d{3}-?\d{3}$/.test(val('phone').replace(/\s/g, '')));
     mark('hasCard', !picked('hasCard'));
-    mark('kinds', pickedAll('kinds').length === 0);
     mark('style', !picked('style'));
-    mark('qty', !picked('qty'));
     mark('consent', !document.getElementById('consent').checked);
     if (first) { first.scrollIntoView({ behavior: 'smooth', block: 'center' }); say('還有必填欄位沒填'); }
     return ok;
