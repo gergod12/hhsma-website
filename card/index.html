@@ -219,14 +219,14 @@
   var lineLink = document.getElementById('share-line');
   lineLink.href = 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(url);
   document.getElementById('share-btn').addEventListener('click', function () {
-    var data = { title: '謝弘俊 數位名片', text: '謝弘俊｜蓮華自然森林療域 創辦人／全人健康自主管理推廣協會 理事長', url: url };
+    var data = { title: '謝弘俊 數位名片', text: '謝弘俊｜蓮華自然森林療域 創辦人・林園療癒嚮導員／全人健康自主管理推廣協會 理事長', url: url };
     if (navigator.share) { navigator.share(data).catch(function () { copyText(url, null); }); }
     else { copyText(url, null); }
   });
   var vb = document.getElementById('vcard-btn');
   if (vb) vb.addEventListener('click', function () {
     var blob = new Blob(["BEGIN:VCARD\r\nVERSION:3.0\r\nN:謝;弘俊;;;\r\nFN:謝弘俊\r\nORG:蓮華自然森林療域；全人健康自主管理推廣協會\r\nTITLE:創辦人・林園療癒嚮導員／理事長\r\nTEL;TYPE=CELL,VOICE:+886911784815\r\nEMAIL;TYPE=INTERNET:healthselfmanage@gmail.com\r\nADR;TYPE=WORK:;;華龍巷 58-1 號;魚池鄉五城村;南投縣;555;台灣\r\nURL:https://lotusforest.tw/\r\nURL:https://healthselfmanage.org.tw/\r\nNOTE:蓮華粉專 https://www.facebook.com/share/1EuDuPv4ck/  協會粉專 https://www.facebook.com/share/18GL73YHi4/\r\nEND:VCARD"], { type: 'text/vcard;charset=utf-8' });
-    var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = '謝弘俊.vcf'; document.body.appendChild(a); a.click();
+    var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = "謝弘俊.vcf"; document.body.appendChild(a); a.click();
     setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000); say('已產生聯絡人檔案，請依手機提示加入');
   });
 })();
