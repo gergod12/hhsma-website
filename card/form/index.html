@@ -106,12 +106,18 @@
 
   <section class="card">
     <h2>2. 原本的名片</h2>
-    <p class="sec-note">請在光線充足處平放名片拍照，正面、背面各一張。送出表單後，可按「上傳名片照片」放進協會雲端資料夾（檔名請加上您的姓名），或直接在 LINE 對話中附上。</p>
+    <p class="sec-note">請在光線充足處平放名片拍照，正面、背面各一張，用下方按鈕上傳（檔名請加上您的姓名），或送出後在 LINE 對話中附上。</p>
     <div class="f" data-key="hasCard"><span class="q req">您目前有在使用的個人名片嗎？</span>
       <div class="opts" id="hasCard">
         <label><input type="radio" name="hasCard" value="有，送出後上傳照片">有，送出後我會上傳照片</label>
         <label><input type="radio" name="hasCard" value="沒有，請幫我設計">沒有，請依下列資料幫我設計</label>
       </div><div class="err">請選擇一項</div></div>
+    <div class="f" style="background:#eef5e9">
+      <span class="q">上傳名片照片</span>
+      <div class="hint">按下方按鈕開啟協會雲端資料夾，選擇相簿中的名片正面、背面照片上傳（需登入 Google 帳號）。上傳後請回到這頁繼續填寫並送出。</div>
+      <a class="btn line" style="background:var(--forest-mid)" href="https://drive.google.com/drive/folders/1Iji5lHjE2RpzNWMaa_pQPb4tZztOZu9U" target="_blank" rel="noopener">📷 上傳名片照片（開啟雲端資料夾）</a>
+      <div class="hint" style="margin:8px 0 0">不方便登入 Google 的話，送出表單後直接在 LINE 對話附上照片即可。</div>
+    </div>
     <div class="f"><label class="q" for="org">任職單位（公司或機構全名）</label><div class="hint">印在個人版名片上；已有名片者可空白</div><input type="text" id="org" name="org" autocomplete="organization"></div>
     <div class="f"><label class="q" for="title">職稱</label><div class="hint">例：總經理、負責人、兼任助理教授</div><input type="text" id="title" name="title" autocomplete="organization-title"></div>
     <div class="f"><label class="q" for="orgContact">單位電話與地址</label><textarea id="orgContact" name="orgContact" placeholder="選填"></textarea></div>
