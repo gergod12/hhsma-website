@@ -106,22 +106,24 @@
 
   <section class="card">
     <h2>2. 原本的名片</h2>
-    <p class="sec-note">請在光線充足處平放名片拍照，正面、背面各一張，用下方按鈕上傳（檔名請加上您的姓名），或送出後在 LINE 對話中附上。</p>
+    <p class="sec-note">有名片的請拍照上傳，沒有名片的請填寫單位與職稱，我們依此設計。</p>
     <div class="f" data-key="hasCard"><span class="q req">您目前有在使用的個人名片嗎？</span>
       <div class="opts" id="hasCard">
-        <label><input type="radio" name="hasCard" value="有，送出後上傳照片">有，送出後我會上傳照片</label>
+        <label><input type="radio" name="hasCard" value="有，上傳照片">有，我上傳名片照片</label>
         <label><input type="radio" name="hasCard" value="沒有，請幫我設計">沒有，請依下列資料幫我設計</label>
       </div><div class="err">請選擇一項</div></div>
-    <div class="f" style="background:#eef5e9">
+    <div class="f" id="uploadBox" style="background:#eef5e9" hidden>
       <span class="q">上傳名片照片</span>
       <div class="hint">按下方按鈕開啟協會雲端資料夾，選擇相簿中的名片正面、背面照片上傳（需登入 Google 帳號）。上傳後請回到這頁繼續填寫並送出。</div>
       <a class="btn line" style="background:var(--forest-mid)" href="https://drive.google.com/drive/folders/1Iji5lHjE2RpzNWMaa_pQPb4tZztOZu9U" target="_blank" rel="noopener">📷 上傳名片照片（開啟雲端資料夾）</a>
       <div class="hint" style="margin:8px 0 0">不方便登入 Google 的話，送出表單後直接在 LINE 對話附上照片即可。</div>
     </div>
-    <div class="f"><label class="q" for="org">任職單位（公司或機構全名）</label><div class="hint">印在個人版名片上；已有名片者可空白</div><input type="text" id="org" name="org" autocomplete="organization"></div>
-    <div class="f"><label class="q" for="title">職稱</label><div class="hint">例：總經理、負責人、兼任助理教授</div><input type="text" id="title" name="title" autocomplete="organization-title"></div>
+    <div id="designBox" hidden>
+    <div class="f" data-key="org"><label class="q req" for="org">任職單位（公司或機構全名）</label><div class="hint">印在個人版名片上</div><input type="text" id="org" name="org" autocomplete="organization"><div class="err">請填寫任職單位</div></div>
+    <div class="f" data-key="title"><label class="q req" for="title">職稱</label><div class="hint">例：總經理、負責人、兼任助理教授</div><input type="text" id="title" name="title" autocomplete="organization-title"><div class="err">請填寫職稱</div></div>
     <div class="f"><label class="q" for="orgContact">單位電話與地址</label><textarea id="orgContact" name="orgContact" placeholder="選填"></textarea></div>
     <div class="f"><label class="q" for="links">要放在個人版名片的網址</label><div class="hint">公司網站、粉專、IG 等，最多 2 個，會做成 QR code</div><textarea id="links" name="links" placeholder="https://"></textarea></div>
+    </div>
   </section>
 
   <section class="card">
@@ -179,6 +181,9 @@
   function save() { try { var d = {}; Array.prototype.forEach.call(form.elements, function (el) { if (!el.name) return; if (el.type === 'radio') { if (el.checked) d[el.name] = el.value; } else if (el.type === 'checkbox') { d[el.name] = (d[el.name] || []).concat(el.checked ? [el.value] : []); } else d[el.name] = el.value; }); localStorage.setItem(KEY, JSON.stringify(d)); } catch (e) {} }
   function load() { try { var d = JSON.parse(localStorage.getItem(KEY) || 'null'); if (!d) return; Array.prototype.forEach.call(form.elements, function (el) { if (!el.name || !(el.name in d)) return; if (el.type === 'radio') el.checked = d[el.name] === el.value; else if (el.type === 'checkbox') el.checked = (d[el.name] || []).indexOf(el.value) >= 0; else el.value = d[el.name]; }); } catch (e) {} }
   load(); form.addEventListener('input', save); form.addEventListener('change', save);
+  function toggleCard() { var v = picked('hasCard'); document.getElementById('uploadBox').hidden = !/^有/.test(v); document.getElementById('designBox').hidden = !/^沒有/.test(v); }
+  Array.prototype.forEach.call(form.querySelectorAll('input[name="hasCard"]'), function (r) { r.addEventListener('change', toggleCard); });
+  toggleCard();
 
   function compose() {
     var L = [];
@@ -198,7 +203,7 @@
     L.push('個人版風格：' + picked('style'));
     if (val('notes')) L.push('備註：' + val('notes').replace(/\n+/g, '；'));
     L.push('');
-    L.push('已同意協會使用資料製作數位名片。名片照片隨後上傳或附上。');
+    L.push(/^有/.test(picked('hasCard')) ? '已同意協會使用資料製作數位名片。名片照片已上傳或隨後附上。' : '已同意協會使用資料製作數位名片。');
     return L.join('\n');
   }
   function validate() {
@@ -208,6 +213,9 @@
     mark('role', !picked('role'));
     mark('phone', !/^09\d{2}-?\d{3}-?\d{3}$/.test(val('phone').replace(/\s/g, '')));
     mark('hasCard', !picked('hasCard'));
+    var noCard = /^沒有/.test(picked('hasCard'));
+    mark('org', noCard && !val('org'));
+    mark('title', noCard && !val('title'));
     mark('style', !picked('style'));
     mark('consent', !document.getElementById('consent').checked);
     if (first) { first.scrollIntoView({ behavior: 'smooth', block: 'center' }); say('還有必填欄位沒填'); }
