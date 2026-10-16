@@ -106,10 +106,10 @@
 
   <section class="card">
     <h2>2. 原本的名片</h2>
-    <p class="sec-note">請在光線充足處平放名片拍照，正面、背面各一張，送出表單後在 LINE 對話中附上。</p>
+    <p class="sec-note">請在光線充足處平放名片拍照，正面、背面各一張。送出表單後，可按「上傳名片照片」放進協會雲端資料夾（檔名請加上您的姓名），或直接在 LINE 對話中附上。</p>
     <div class="f" data-key="hasCard"><span class="q req">您目前有在使用的個人名片嗎？</span>
       <div class="opts" id="hasCard">
-        <label><input type="radio" name="hasCard" value="有，送出後用 LINE 附上照片">有，送出後我會在 LINE 附上照片</label>
+        <label><input type="radio" name="hasCard" value="有，送出後上傳照片">有，送出後我會上傳照片</label>
         <label><input type="radio" name="hasCard" value="沒有，請幫我設計">沒有，請依下列資料幫我設計</label>
       </div><div class="err">請選擇一項</div></div>
     <div class="f"><label class="q" for="org">任職單位（公司或機構全名）</label><div class="hint">印在個人版名片上；已有名片者可空白</div><input type="text" id="org" name="org" autocomplete="organization"></div>
@@ -146,9 +146,10 @@
     <h3>還差最後一步：附上名片照片</h3>
     <ol>
       <li>LINE 開啟後，選擇「<b>張晏淋</b>」（秘書處）或協會群組，按送出。</li>
-      <li>在同一個對話中，<b>附上您原本名片的正面與背面照片</b>。</li>
+      <li>按下方「上傳名片照片」，把<b>正面與背面照片</b>放進協會雲端資料夾（需登入 Google，檔名請加上姓名），或直接在同一個 LINE 對話中附上。</li>
       <li>約 7 個工作天內，秘書處會用 LINE 傳名片樣稿給您校對。</li>
     </ol>
+    <a class="btn ghost" style="margin-top:12px" href="https://drive.google.com/drive/folders/1Iji5lHjE2RpzNWMaa_pQPb4tZztOZu9U" target="_blank" rel="noopener">📷 上傳名片照片到雲端資料夾</a>
     <p style="margin:10px 0 0;font-size:13px;color:var(--muted)">若 LINE 沒有自動開啟，可按「複製填寫內容」後自行貼到 LINE，或改用 Email 寄出。您填寫的內容：</p>
     <pre id="preview"></pre>
   </div>
@@ -191,7 +192,7 @@
     L.push('個人版風格：' + picked('style'));
     if (val('notes')) L.push('備註：' + val('notes').replace(/\n+/g, '；'));
     L.push('');
-    L.push('已同意協會使用資料製作名片。名片照片隨後附上。');
+    L.push('已同意協會使用資料製作名片。名片照片隨後上傳或附上。');
     return L.join('\n');
   }
   function validate() {
