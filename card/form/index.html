@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>理監事名片製作需求調查｜全人健康自主管理推廣協會</title>
+<meta name="description" content="協會為每位理監事製作協會版與個人版名片，請花 3 分鐘填寫資料。">
+<meta property="og:title" content="理監事名片製作需求調查">
+<meta property="og:description" content="請花 3 分鐘填寫，協會為您製作協會版與個人版名片。">
+<meta property="og:image" content="https://healthselfmanage.org.tw/card/og.png">
+<link rel="icon" type="image/jpeg" href="../../assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+  :root { --bg:#f1f0e7; --fg:#2a2f26; --muted:#6d7262; --surface:#fff; --line:rgba(45,74,34,.16);
+    --forest:#2d4a22; --forest-mid:#4a7c3f; --sun:#f5a623; --orange:#e8921c; --earth:#8b7355; --err:#b3261e;
+    --font:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif; }
+  * { box-sizing:border-box }
+  body { margin:0; background:var(--bg); color:var(--fg); font-family:var(--font); line-height:1.6; -webkit-font-smoothing:antialiased }
+  .page { max-width:560px; margin:0 auto; padding-block:20px 48px; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px)); display:flex; flex-direction:column; gap:16px }
+  header.top { display:flex; align-items:center; gap:12px }
+  header.top img { width:48px; height:auto; mix-blend-mode:multiply }
+  header.top .org { font-size:13px; color:var(--earth); letter-spacing:.04em }
+  header.top h1 { margin:0; font-size:21px; color:var(--forest); letter-spacing:.04em; line-height:1.3 }
+  .intro { background:var(--surface); border-radius:16px; padding:16px 18px; font-size:14.5px; border:1px solid var(--line) }
+  .intro p { margin:0 0 8px } .intro p:last-child { margin:0 }
+  .intro ol { margin:6px 0 8px; padding-left:22px }
+  .intro .note { color:var(--muted); font-size:13px }
+  section.card { background:var(--surface); border-radius:16px; border:1px solid var(--line); overflow:hidden }
+  section.card h2 { margin:0; padding:12px 18px; font-size:15px; color:#fff; background:var(--forest-mid); letter-spacing:.06em }
+  section.card h2 small { font-weight:400; opacity:.85; margin-left:6px }
+  .sec-note { margin:0; padding:12px 18px 0; font-size:13px; color:var(--muted) }
+  .f { padding:14px 18px; border-top:1px solid var(--line) }
+  .f:first-of-type { border-top:0 }
+  .f label.q, .f .q { display:block; font-weight:500; font-size:15px; margin-bottom:6px }
+  .req::after { content:" *"; color:var(--err) }
+  .hint { font-size:12.5px; color:var(--muted); margin:-2px 0 8px }
+  input[type=text], input[type=tel], input[type=email], input[type=url], textarea, select {
+    width:100%; font:inherit; font-size:16px; padding:10px 12px; border:1px solid var(--line); border-radius:10px; background:#fdfcf8; color:var(--fg) }
+  textarea { min-height:76px; resize:vertical }
+  input:focus, textarea:focus, select:focus { outline:2px solid var(--sun); outline-offset:1px; border-color:transparent }
+  .opts { display:flex; flex-direction:column; gap:6px }
+  .opts label { display:flex; align-items:flex-start; gap:10px; padding:9px 12px; border:1px solid var(--line); border-radius:10px; background:#fdfcf8; font-size:15px; cursor:pointer }
+  .opts input { margin:5px 0 0; width:18px; height:18px; accent-color:var(--forest-mid); flex:none }
+  .opts label:has(input:checked) { border-color:var(--forest-mid); background:#eef5e9 }
+  .row2 { display:grid; grid-template-columns:1fr 1fr; gap:10px }
+  .err { color:var(--err); font-size:13px; margin-top:6px; display:none }
+  .f.bad .err { display:block } .f.bad input[type=text], .f.bad input[type=tel], .f.bad .opts label { border-color:var(--err) }
+  .consent { display:flex; gap:10px; align-items:flex-start; font-size:14.5px }
+  .consent input { width:20px; height:20px; margin-top:3px; accent-color:var(--forest-mid); flex:none }
+  .actions { display:flex; flex-direction:column; gap:10px }
+  .btn { display:flex; align-items:center; justify-content:center; gap:8px; min-height:52px; border-radius:14px; font:inherit; font-size:16px; font-weight:700; border:0; cursor:pointer; text-decoration:none; -webkit-tap-highlight-color:transparent }
+  .btn svg { width:20px; height:20px; flex:none }
+  .btn.line { background:#06C755; color:#fff }
+  .btn.ghost { background:var(--surface); color:var(--forest); border:1px solid var(--line) }
+  .btn:focus-visible { outline:2px solid var(--sun); outline-offset:2px }
+  .after { display:none; background:#fff8e8; border:1px solid rgba(232,146,28,.4); border-radius:16px; padding:16px 18px; font-size:14.5px }
+  .after.show { display:block }
+  .after h3 { margin:0 0 6px; font-size:16px; color:var(--orange) }
+  .after ol { margin:0; padding-left:22px }
+  .after pre { white-space:pre-wrap; font:inherit; font-size:13px; background:#fdfcf8; border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin:10px 0 0; max-height:220px; overflow:auto }
+  footer.note { font-size:12.5px; color:var(--muted); text-align:center; line-height:1.6 }
+  .toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%); background:var(--forest); color:#fff; padding:8px 16px; border-radius:999px; font-size:13.5px; opacity:0; pointer-events:none; transition:opacity .2s }
+  .toast.show { opacity:1 }
+  @media (prefers-reduced-motion: reduce) { .toast { transition:none } }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="top">
+    <img src="../../assets/logo.jpg" alt="">
+    <div><div class="org">全人健康自主管理推廣協會</div><h1>理監事名片製作需求調查</h1></div>
+  </header>
+
+  <div class="intro">
+    <p>各位理監事您好，協會將為每位理監事製作兩套名片，費用由協會負擔：</p>
+    <ol>
+      <li><b>協會版名片</b>：統一版型，標示您在協會的職務。</li>
+      <li><b>個人版名片</b>：依您現有的單位與頭銜重新設計，可沿用原名片風格。</li>
+    </ol>
+    <p>另附一頁可在 LINE 轉傳的數位名片網頁，點開即可撥號、存入聯絡人。理事長的成品可先參考：<a href="../" style="color:var(--forest-mid)">healthselfmanage.org.tw/card/</a></p>
+    <p class="note">填寫約 3 分鐘。按下「送到 LINE」後，請在同一個對話附上您原本名片的正反面照片。資料僅供名片製作使用。</p>
+  </div>
+
+  <form id="f" novalidate>
+  <div style="display:flex;flex-direction:column;gap:16px">
+
+  <section class="card">
+    <h2>1. 基本資料</h2>
+    <div class="f" data-key="name"><label class="q req" for="name">姓名</label><input type="text" id="name" name="name" autocomplete="name" placeholder="請填身分證姓名，將印在名片上"><div class="err">請填寫姓名</div></div>
+    <div class="f"><label class="q" for="nameEn">英文姓名拼音</label><div class="hint">護照拼音，例：Hsieh Hung-Chun。沒有可空白，我們依外交部拼音代填。</div><input type="text" id="nameEn" name="nameEn" placeholder="Hsieh Hung-Chun"></div>
+    <div class="f" data-key="role"><span class="q req">協會職務</span>
+      <div class="opts" id="role">
+        <label><input type="radio" name="role" value="理事長">理事長</label>
+        <label><input type="radio" name="role" value="常務理事">常務理事</label>
+        <label><input type="radio" name="role" value="理事">理事</label>
+        <label><input type="radio" name="role" value="常務監事">常務監事</label>
+        <label><input type="radio" name="role" value="監事">監事</label>
+        <label><input type="radio" name="role" value="秘書長">秘書長</label>
+        <label><input type="radio" name="role" value="其他">其他（請在備註說明）</label>
+      </div><div class="err">請選擇協會職務</div></div>
+    <div class="f" data-key="phone"><label class="q req" for="phone">手機號碼</label><div class="hint">將印在名片上</div><input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="0912-345-678"><div class="err">請填寫 09 開頭的手機號碼</div></div>
+    <div class="f"><label class="q" for="email">Email</label><div class="hint">印在個人版名片；協會版統一印協會信箱</div><input type="email" id="email" name="email" inputmode="email" autocomplete="email" placeholder="name@example.com"></div>
+    <div class="f"><label class="q" for="lineId">LINE ID</label><div class="hint">選填，可加在個人版名片</div><input type="text" id="lineId" name="lineId" autocomplete="off"></div>
+  </section>
+
+  <section class="card">
+    <h2>2. 原本的名片</h2>
+    <p class="sec-note">請在光線充足處平放名片拍照，正面、背面各一張，送出表單後在 LINE 對話中附上。</p>
+    <div class="f" data-key="hasCard"><span class="q req">您目前有在使用的個人名片嗎？</span>
+      <div class="opts" id="hasCard">
+        <label><input type="radio" name="hasCard" value="有，送出後用 LINE 附上照片">有，送出後我會在 LINE 附上照片</label>
+        <label><input type="radio" name="hasCard" value="沒有，請幫我設計">沒有，請依下列資料幫我設計</label>
+      </div><div class="err">請選擇一項</div></div>
+    <div class="f"><label class="q" for="org">任職單位（公司或機構全名）</label><div class="hint">印在個人版名片上；已有名片者可空白</div><input type="text" id="org" name="org" autocomplete="organization"></div>
+    <div class="f"><label class="q" for="title">職稱</label><div class="hint">例：總經理、負責人、兼任助理教授</div><input type="text" id="title" name="title" autocomplete="organization-title"></div>
+    <div class="f"><label class="q" for="orgContact">單位電話與地址</label><textarea id="orgContact" name="orgContact" placeholder="選填"></textarea></div>
+    <div class="f"><label class="q" for="links">要放在個人版名片的網址</label><div class="hint">公司網站、粉專、IG 等，最多 2 個，會做成 QR code</div><textarea id="links" name="links" placeholder="https://"></textarea></div>
+  </section>
+
+  <section class="card">
+    <h2>3. 製作需求</h2>
+    <div class="f" data-key="kinds"><span class="q req">需要哪些版本？</span><div class="hint">可複選</div>
+      <div class="opts" id="kinds">
+        <label><input type="checkbox" name="kinds" value="協會版實體名片" checked>協會版實體名片</label>
+        <label><input type="checkbox" name="kinds" value="個人版實體名片" checked>個人版實體名片</label>
+        <label><input type="checkbox" name="kinds" value="數位名片網頁（LINE 轉傳用）" checked>數位名片網頁（LINE 轉傳用）</label>
+      </div><div class="err">請至少選擇一項</div></div>
+    <div class="f" data-key="style"><span class="q req">個人版名片風格</span>
+      <div class="opts" id="style">
+        <label><input type="radio" name="style" value="沿用原名片的配色與版型">沿用原名片的配色與版型</label>
+        <label><input type="radio" name="style" value="改用協會的綠橘配色">改用協會的綠橘配色</label>
+        <label><input type="radio" name="style" value="全新設計，請先提案">全新設計，請先提案給我看</label>
+        <label><input type="radio" name="style" value="不需要個人版">不需要個人版</label>
+      </div><div class="err">請選擇一項</div></div>
+    <div class="f" data-key="qty"><span class="q req">實體名片印刷數量</span>
+      <div class="opts" id="qty">
+        <label><input type="radio" name="qty" value="每款 100 張">每款 100 張</label>
+        <label><input type="radio" name="qty" value="每款 200 張">每款 200 張</label>
+        <label><input type="radio" name="qty" value="暫不印刷，只要電子檔">暫不印刷，只要電子檔</label>
+      </div><div class="err">請選擇一項</div></div>
+    <div class="f"><label class="q" for="notes">其他需求或備註</label><textarea id="notes" name="notes" placeholder="例：姓名要用特定字體、不印電話、另加第二支電話"></textarea></div>
+  </section>
+
+  <section class="card">
+    <h2>4. 同意事項</h2>
+    <div class="f" data-key="consent"><label class="consent"><input type="checkbox" id="consent" name="consent"><span class="req">我同意協會使用以上資料製作名片，並將數位名片網頁發布於協會網站</span></label><div class="err">請勾選同意後再送出</div></div>
+  </section>
+
+  <div class="actions">
+    <button type="submit" class="btn line" id="send">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4C7 4 3 7.3 3 11.3c0 3.6 3.2 6.6 7.5 7.2.3.1.7.2.8.5.1.3 0 .8 0 1.1l-.1.8c0 .2-.2.9.8.5s5.1-3 7-5.2c1.3-1.4 2-2.9 2-4.9C21 7.3 17 4 12 4z"/></svg>
+      送到 LINE 給秘書處
+    </button>
+    <button type="button" class="btn ghost" id="copy">複製填寫內容</button>
+    <a class="btn ghost" id="mail" href="#">改用 Email 寄出</a>
+  </div>
+
+  <div class="after" id="after">
+    <h3>還差最後一步：附上名片照片</h3>
+    <ol>
+      <li>LINE 開啟後，選擇「<b>張晏淋</b>」（秘書處）或協會群組，按送出。</li>
+      <li>在同一個對話中，<b>附上您原本名片的正面與背面照片</b>。</li>
+      <li>約 7 個工作天內，秘書處會用 LINE 傳名片樣稿給您校對。</li>
+    </ol>
+    <p style="margin:10px 0 0;font-size:13px;color:var(--muted)">若 LINE 沒有自動開啟，可按「複製填寫內容」後自行貼到 LINE，或改用 Email 寄出。您填寫的內容：</p>
+    <pre id="preview"></pre>
+  </div>
+  </div>
+  </form>
+
+  <footer class="note">秘書處 張晏淋 0937-043378 ・ healthselfmanage@gmail.com<br>全人健康自主管理推廣協會</footer>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  var form = document.getElementById('f'), toast = document.getElementById('toast'), timer;
+  var KEY = 'hhsma-card-form-draft';
+  function say(m) { toast.textContent = m; toast.classList.add('show'); clearTimeout(timer); timer = setTimeout(function () { toast.classList.remove('show'); }, 2200); }
+  function val(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+  function picked(name) { var r = form.querySelector('input[name="' + name + '"]:checked'); return r ? r.value : ''; }
+  function pickedAll(name) { return Array.prototype.map.call(form.querySelectorAll('input[name="' + name + '"]:checked'), function (c) { return c.value; }); }
+
+  // 草稿自動保存
+  function save() { try { var d = {}; Array.prototype.forEach.call(form.elements, function (el) { if (!el.name) return; if (el.type === 'radio') { if (el.checked) d[el.name] = el.value; } else if (el.type === 'checkbox') { d[el.name] = (d[el.name] || []).concat(el.checked ? [el.value] : []); } else d[el.name] = el.value; }); localStorage.setItem(KEY, JSON.stringify(d)); } catch (e) {} }
+  function load() { try { var d = JSON.parse(localStorage.getItem(KEY) || 'null'); if (!d) return; Array.prototype.forEach.call(form.elements, function (el) { if (!el.name || !(el.name in d)) return; if (el.type === 'radio') el.checked = d[el.name] === el.value; else if (el.type === 'checkbox') el.checked = (d[el.name] || []).indexOf(el.value) >= 0; else el.value = d[el.name]; }); } catch (e) {} }
+  load(); form.addEventListener('input', save); form.addEventListener('change', save);
+
+  function compose() {
+    var L = [];
+    L.push('【理監事名片製作需求】');
+    L.push('姓名：' + val('name') + (val('nameEn') ? '（' + val('nameEn') + '）' : ''));
+    L.push('協會職務：' + picked('role'));
+    L.push('手機：' + val('phone'));
+    if (val('email')) L.push('Email：' + val('email'));
+    if (val('lineId')) L.push('LINE ID：' + val('lineId'));
+    L.push('');
+    L.push('原本名片：' + picked('hasCard'));
+    if (val('org')) L.push('任職單位：' + val('org'));
+    if (val('title')) L.push('職稱：' + val('title'));
+    if (val('orgContact')) L.push('單位電話／地址：' + val('orgContact').replace(/\n+/g, '；'));
+    if (val('links')) L.push('個人版網址：' + val('links').replace(/\n+/g, '、'));
+    L.push('');
+    L.push('需要版本：' + pickedAll('kinds').join('、'));
+    L.push('個人版風格：' + picked('style'));
+    L.push('印刷數量：' + picked('qty'));
+    if (val('notes')) L.push('備註：' + val('notes').replace(/\n+/g, '；'));
+    L.push('');
+    L.push('已同意協會使用資料製作名片。名片照片隨後附上。');
+    return L.join('\n');
+  }
+  function validate() {
+    var ok = true, first = null;
+    function mark(key, bad) { var box = form.querySelector('[data-key="' + key + '"]'); box.classList.toggle('bad', bad); if (bad) { ok = false; first = first || box; } }
+    mark('name', !val('name'));
+    mark('role', !picked('role'));
+    mark('phone', !/^09\d{2}-?\d{3}-?\d{3}$/.test(val('phone').replace(/\s/g, '')));
+    mark('hasCard', !picked('hasCard'));
+    mark('kinds', pickedAll('kinds').length === 0);
+    mark('style', !picked('style'));
+    mark('qty', !picked('qty'));
+    mark('consent', !document.getElementById('consent').checked);
+    if (first) { first.scrollIntoView({ behavior: 'smooth', block: 'center' }); say('還有必填欄位沒填'); }
+    return ok;
+  }
+  function showAfter(text) { document.getElementById('preview').textContent = text; var a = document.getElementById('after'); a.classList.add('show'); a.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { say('已複製，可貼到 LINE'); }, function () { say('請長按下方內容複製'); });
+    else say('請長按下方內容複製');
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!validate()) return;
+    var text = compose();
+    showAfter(text);
+    window.location.href = 'https://line.me/R/share?text=' + encodeURIComponent(text);
+  });
+  document.getElementById('copy').addEventListener('click', function () { if (!validate()) return; var t = compose(); showAfter(t); copyText(t); });
+  document.getElementById('mail').addEventListener('click', function (e) {
+    e.preventDefault(); if (!validate()) return; var t = compose(); showAfter(t);
+    window.location.href = 'mailto:healthselfmanage@gmail.com?subject=' + encodeURIComponent('理監事名片製作需求：' + val('name')) + '&body=' + encodeURIComponent(t + '\n\n（請將名片正反面照片附加在此信件）');
+  });
+})();
+</script>
+</body>
+</html>
