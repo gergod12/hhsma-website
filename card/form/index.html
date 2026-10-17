@@ -101,7 +101,6 @@
       </div><div class="err">請選擇協會職務</div></div>
     <div class="f" data-key="phone"><label class="q req" for="phone">手機號碼</label><div class="hint">將印在名片上</div><input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="0912-345-678"><div class="err">請填寫 09 開頭的手機號碼</div></div>
     <div class="f"><label class="q" for="email">Email</label><div class="hint">印在個人版名片；協會版統一印協會信箱</div><input type="email" id="email" name="email" inputmode="email" autocomplete="email" placeholder="name@example.com"></div>
-    <div class="f"><label class="q" for="lineId">LINE ID</label><div class="hint">選填，可加在個人版名片</div><input type="text" id="lineId" name="lineId" autocomplete="off"></div>
   </section>
 
   <section class="card">
@@ -192,7 +191,6 @@
     L.push('協會職務：' + picked('role'));
     L.push('手機：' + val('phone'));
     if (val('email')) L.push('Email：' + val('email'));
-    if (val('lineId')) L.push('LINE ID：' + val('lineId'));
     L.push('');
     L.push('原本名片：' + picked('hasCard'));
     if (val('org')) L.push('任職單位：' + val('org'));
