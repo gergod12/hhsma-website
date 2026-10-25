@@ -1,0 +1,463 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1320 1660" width="1320" height="1660" font-family="'Noto Sans TC','PingFang TC','Microsoft JhengHei','WenQuanYi Zen Hei',sans-serif">
+  <title>人體呼吸與循環系統解剖說明圖</title>
+  <desc>正面軀幹示意圖，標示上呼吸道、氣管、支氣管、左右肺葉、心臟四腔室、主要血管與橫膈膜；附上呼吸道側面圖、肺泡氣體交換放大圖與肺循環／體循環路徑圖。</desc>
+  <defs>
+    <style>
+      .t{fill:#3a3a32}
+      .title{font-size:40px;font-weight:700;fill:#2d4a22}
+      .sub{font-size:19px;fill:#6b6b5e}
+      .lbl{font-size:19px;fill:#3a3a32}
+      .lbl-en{font-size:12px;fill:#8b7355}
+      .lbl-s{font-size:16px;fill:#3a3a32}
+      .lbl-xs{font-size:13px;fill:#6b6b5e}
+      .ptitle{font-size:22px;font-weight:700;fill:#2d4a22}
+      .lead{stroke:#5c4a32;stroke-width:1.4;fill:none;opacity:.85}
+      .chamber{font-size:14px;font-weight:700;fill:#fff}
+      .body{fill:#f6e8d6;stroke:#c9ad8d;stroke-width:2.5}
+      .lung{fill:#f3b9b0;stroke:#c97d74;stroke-width:2.5}
+      .fissure{fill:none;stroke:#c97d74;stroke-width:2;stroke-dasharray:6 4}
+      .airway{fill:#ead9a4;stroke:#a88a3c;stroke-width:1.5}
+      .ring{stroke:#a88a3c;stroke-width:1.4;fill:none}
+      .bronchus{stroke:#c4a24a;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .art{stroke:#c8403a;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .vein{stroke:#3a63b0;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .artF{fill:#c8403a}
+      .veinF{fill:#3a63b0}
+      .heart{fill:#b6453f;stroke:#7d2b27;stroke-width:2.5}
+      .hline{fill:none;stroke:#7d2b27;stroke-width:2;opacity:.9}
+      .dia{fill:none;stroke:#c98b6d;stroke-width:16;stroke-linecap:round}
+      .panel{fill:#fff;stroke:#d9cdb8;stroke-width:1.5;rx:14}
+      .note{font-size:15.5px;fill:#3a3a32}
+      .noteh{font-size:18px;font-weight:700;fill:#2d4a22}
+      .air{stroke:#e8921c;stroke-width:3;fill:none;stroke-dasharray:7 5;stroke-linecap:round}
+      .flowB{stroke:#3a63b0;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .flowR{stroke:#c8403a;stroke-width:6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .step{font-size:13px;font-weight:700;fill:#fff}
+      .box{fill:#f5f0e8;stroke:#b8960c;stroke-width:1.5;rx:10}
+    </style>
+    <g id="fa"><polygon points="0,-6 -5,4 5,4" fill="#fff" stroke="none" opacity=".95"/></g>
+    <marker id="mAir" markerWidth="13" markerHeight="13" refX="9" refY="6.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L13,6.5 L0,13 Z" fill="#e8921c"/>
+    </marker>
+    <marker id="mB" markerWidth="16" markerHeight="16" refX="11" refY="8" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L16,8 L0,16 Z" fill="#3a63b0"/>
+    </marker>
+    <marker id="mR" markerWidth="16" markerHeight="16" refX="11" refY="8" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L16,8 L0,16 Z" fill="#c8403a"/>
+    </marker>
+    <marker id="mG" markerWidth="6" markerHeight="6" refX="4" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#6b6b5e"/>
+    </marker>
+    <linearGradient id="capGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3a63b0"/>
+      <stop offset="0.5" stop-color="#8f5a9a"/>
+      <stop offset="1" stop-color="#c8403a"/>
+    </linearGradient>
+    <radialGradient id="alvGrad" cx="0.4" cy="0.35" r="0.75">
+      <stop offset="0" stop-color="#fff5f2"/>
+      <stop offset="1" stop-color="#f3c3bb"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1320" height="1660" fill="#fdfbf7"/>
+
+  <!-- ================= 標題 ================= -->
+  <text x="40" y="62" class="title">人體呼吸與循環系統解剖說明圖</text>
+  <text x="40" y="94" class="sub">Respiratory &amp; Circulatory System　｜　空氣如何進入身體、氧氣如何送到全身細胞</text>
+  <!-- 圖例 -->
+  <g transform="translate(790,46)">
+    <rect x="0" y="-22" width="500" height="66" fill="#f5f0e8" stroke="#d9cdb8" rx="10"/>
+    <circle cx="22" cy="-2" r="8" class="artF"/><text x="38" y="3" class="lbl-s">含氧血（動脈血）</text>
+    <circle cx="190" cy="-2" r="8" class="veinF"/><text x="206" y="3" class="lbl-s">缺氧血（靜脈血）</text>
+    <line x1="366" y1="-2" x2="400" y2="-2" class="air" marker-end="url(#mAir)"/><text x="412" y="3" class="lbl-s">空氣流向</text>
+    <rect x="14" y="16" width="16" height="14" class="lung" rx="4"/><text x="38" y="29" class="lbl-s">肺</text>
+    <rect x="110" y="16" width="16" height="14" class="airway" rx="3"/><text x="134" y="29" class="lbl-s">氣管・支氣管（軟骨）</text>
+    <rect x="330" y="16" width="16" height="14" fill="#b6453f" rx="3"/><text x="354" y="29" class="lbl-s">心肌</text>
+    <rect x="410" y="16" width="16" height="14" fill="#c98b6d" rx="3"/><text x="434" y="29" class="lbl-s">橫膈膜</text>
+  </g>
+
+  <!-- ================= 主圖：正面軀幹 ================= -->
+  <g id="main">
+    <!-- 身體輪廓 -->
+    <path class="body" d="M380 310 L380 350 Q380 365 362 368 L290 378 Q215 390 205 465 L200 1130 L660 1130 L655 465 Q645 390 570 378 L498 368 Q480 365 480 350 L480 310 Z"/>
+    <ellipse cx="430" cy="232" rx="80" ry="96" class="body"/>
+    <!-- 五官暗示 -->
+    <path d="M422 230 Q430 262 438 230" fill="none" stroke="#c9ad8d" stroke-width="2"/>
+    <path d="M412 290 Q430 300 448 290" fill="none" stroke="#c9ad8d" stroke-width="2"/>
+    <path d="M400 205 q10 -6 20 0 M440 205 q10 -6 20 0" fill="none" stroke="#c9ad8d" stroke-width="2.2"/>
+
+    <!-- 頸部血管 -->
+    <line x1="392" y1="318" x2="392" y2="372" class="vein" stroke-width="7"/>
+    <line x1="468" y1="318" x2="468" y2="372" class="vein" stroke-width="7"/>
+    <line x1="404" y1="318" x2="404" y2="372" class="art" stroke-width="6"/>
+    <line x1="456" y1="318" x2="456" y2="372" class="art" stroke-width="6"/>
+
+    <!-- 降主動脈（在最後面） -->
+    <path class="art" stroke-width="22" d="M548 530 C556 640 552 820 552 925 C552 960 500 965 466 980 L466 990"/>
+    <!-- 下腔靜脈（後面） -->
+    <path class="vein" stroke-width="24" d="M404 700 L404 990"/>
+    <!-- 上腔靜脈 -->
+    <path class="vein" stroke-width="22" d="M418 612 L418 462"/>
+    <path class="vein" stroke-width="12" d="M418 462 C418 440 380 420 340 405 M418 462 C418 440 450 425 478 420"/>
+    <!-- 頭臂靜脈連頸靜脈 -->
+    <path class="vein" stroke-width="7" d="M340 405 C330 395 350 380 392 372 M478 420 C470 400 468 385 468 372"/>
+
+    <!-- 右肺動脈（在升主動脈與上腔靜脈後方） -->
+    <path class="vein" stroke-width="18" d="M484 556 C450 548 400 570 345 598"/>
+
+    <!-- 右肺 -->
+    <path class="lung" d="M380 445 C330 430 280 455 262 525 C235 625 232 785 250 905 C300 917 350 917 390 910 C405 805 405 605 395 465 C392 453 388 447 380 445 Z"/>
+    <path class="fissure" d="M400 645 Q320 655 246 635"/>
+    <path class="fissure" d="M246 635 Q298 762 372 900"/>
+    <!-- 左肺 -->
+    <path class="lung" d="M480 445 C530 430 580 455 598 525 C625 625 628 785 610 900 C570 913 525 913 495 905 C500 855 545 825 548 765 C550 705 480 695 468 645 C460 585 462 505 470 460 C472 452 476 447 480 445 Z"/>
+    <path class="fissure" d="M612 600 Q560 760 500 895"/>
+
+    <!-- 喉 + 氣管 -->
+    <path class="airway" d="M412 302 L448 302 L452 322 Q452 346 430 350 Q408 346 408 322 Z"/>
+    <path d="M422 314 L438 314 M420 326 L440 326" class="ring"/>
+    <rect x="416" y="350" width="28" height="225" class="airway" rx="4"/>
+    <g class="ring">
+      <path d="M418 364 q12 -4 24 0 M418 378 q12 -4 24 0 M418 392 q12 -4 24 0 M418 406 q12 -4 24 0 M418 420 q12 -4 24 0 M418 434 q12 -4 24 0 M418 448 q12 -4 24 0 M418 462 q12 -4 24 0 M418 476 q12 -4 24 0 M418 490 q12 -4 24 0 M418 504 q12 -4 24 0 M418 518 q12 -4 24 0 M418 532 q12 -4 24 0 M418 546 q12 -4 24 0 M418 560 q12 -4 24 0"/>
+    </g>
+
+    <!-- 支氣管樹 -->
+    <g class="bronchus">
+      <path stroke-width="16" d="M430 572 L348 626"/>
+      <path stroke-width="14" d="M430 572 L520 632"/>
+      <path stroke-width="9" d="M348 626 L300 575 M348 626 L320 700 M348 626 L325 730 L300 830"/>
+      <path stroke-width="9" d="M520 632 L560 575 M520 632 L560 720 L578 830"/>
+      <path stroke-width="5" d="M300 575 L278 545 M300 575 L310 530 M320 700 L290 690 M320 700 L300 735 M325 730 L350 790 M300 830 L270 860 M300 830 L330 870 M312 780 L280 800"/>
+      <path stroke-width="5" d="M560 575 L545 535 M560 575 L585 555 M560 720 L590 705 M560 720 L600 760 M578 830 L555 860 M578 830 L605 850 M568 775 L600 800"/>
+      <path stroke-width="2.5" d="M278 545 L262 520 M278 545 L292 515 M310 530 L300 505 M290 690 L268 668 M300 735 L278 745 M350 790 L368 820 M350 790 L372 778 M270 860 L252 850 M330 870 L350 892 M280 800 L262 790"/>
+      <path stroke-width="2.5" d="M545 535 L535 508 M585 555 L600 530 M590 705 L612 690 M600 760 L620 752 M555 860 L540 885 M605 850 L618 872 M600 800 L618 815"/>
+    </g>
+    <!-- 肺內血管分支 -->
+    <path class="vein" stroke-width="7" d="M345 598 L300 560 M345 598 L318 660 L300 760"/>
+    <path class="vein" stroke-width="4" d="M300 560 L285 528 M318 660 L292 668 M300 760 L280 790 M300 760 L322 800"/>
+    <path class="vein" stroke-width="7" d="M546 586 L565 545 M546 586 L560 690 L575 790"/>
+    <path class="vein" stroke-width="4" d="M565 545 L580 512 M560 690 L585 684 M575 790 L598 820 M575 790 L560 835"/>
+
+    <!-- 左肺動脈 -->
+    <path class="vein" stroke-width="18" d="M484 556 C508 556 530 570 546 586"/>
+
+    <!-- 肺靜脈（左右各二） -->
+    <path class="art" stroke-width="11" d="M362 655 L452 632 M366 690 L452 662"/>
+    <path class="art" stroke-width="7" d="M362 655 L330 630 M366 690 L330 700"/>
+    <path class="art" stroke-width="11" d="M545 640 L512 632 M548 678 L515 660"/>
+    <path class="art" stroke-width="7" d="M545 640 L575 620 M548 678 L585 690"/>
+
+    <!-- 升主動脈與主動脈弓 -->
+    <path class="art" stroke-width="22" d="M470 612 C470 565 465 525 480 503 C500 478 540 480 548 530"/>
+    <!-- 弓上三分支 -->
+    <path class="art" stroke-width="8" d="M486 494 L486 450 M486 450 C486 425 450 408 404 372 M486 450 C486 425 440 410 345 402"/>
+    <path class="art" stroke-width="7" d="M512 486 L512 445 C512 420 480 400 456 372"/>
+    <path class="art" stroke-width="7" d="M536 500 L536 460 C536 430 560 420 585 408"/>
+
+    <!-- 肺動脈幹 -->
+    <path class="vein" stroke-width="20" d="M498 616 C506 594 500 572 484 556"/>
+
+    <!-- 心臟 -->
+    <path class="heart" d="M440 602 C400 592 380 632 385 682 C390 742 420 792 480 822 C520 837 555 832 565 817 C575 792 560 742 545 702 C535 662 525 632 510 607 C490 594 460 594 440 602 Z"/>
+    <path class="hline" d="M386 672 Q450 692 526 652"/>
+    <path class="hline" d="M470 684 Q500 760 556 815"/>
+    <path class="hline" d="M462 600 Q466 640 470 684"/>
+    <!-- 冠狀動脈 -->
+    <path class="art" stroke-width="2.5" d="M474 686 Q498 752 548 806" opacity=".7"/>
+    <path class="art" stroke-width="2.5" d="M448 624 Q400 660 396 720" opacity=".7"/>
+    <text x="418" y="646" class="chamber" text-anchor="middle">右心房</text>
+    <text x="445" y="752" class="chamber" text-anchor="middle">右心室</text>
+    <text x="494" y="636" class="chamber" text-anchor="middle">左心房</text>
+    <text x="525" y="740" class="chamber" text-anchor="middle">左心室</text>
+
+    <!-- 血流方向箭頭 -->
+    <use href="#fa" transform="translate(418,500) rotate(180)"/>
+    <use href="#fa" transform="translate(418,560) rotate(180)"/>
+    <use href="#fa" transform="translate(404,965) rotate(0)"/>
+    <use href="#fa" transform="translate(404,880) rotate(0)"/>
+    <use href="#fa" transform="translate(470,580) rotate(0)"/>
+    <use href="#fa" transform="translate(552,942) rotate(180)"/>
+    <use href="#fa" transform="translate(400,580) rotate(-70)"/>
+    <use href="#fa" transform="translate(528,575) rotate(60)"/>
+    <use href="#fa" transform="translate(400,679) rotate(78)"/>
+    <use href="#fa" transform="translate(528,636) rotate(-100)"/>
+
+    <!-- 橫膈膜 -->
+    <path class="dia" d="M208 935 C280 875 380 872 430 912 C480 875 580 875 652 932"/>
+
+    <!-- 體循環：全身組織 -->
+    <g>
+      <rect x="296" y="992" width="268" height="112" class="box"/>
+      <text x="430" y="1016" text-anchor="middle" class="lbl-s" font-weight="700">全身組織與器官（腦・肌肉・內臟⋯）</text>
+      <path d="M466 992 L466 1030 C466 1060 440 1060 404 1060 L404 992" fill="none" stroke="url(#capGrad)" stroke-width="10" stroke-linecap="round" transform="translate(0,0)"/>
+      <path d="M470 1038 Q490 1030 500 1046 M470 1048 Q490 1040 500 1056" fill="none" stroke="#c8403a" stroke-width="2"/>
+      <path d="M400 1040 Q380 1032 372 1048 M400 1050 Q380 1042 372 1058" fill="none" stroke="#3a63b0" stroke-width="2"/>
+      <text x="520" y="1052" class="lbl-xs" text-anchor="middle">O₂ →</text>
+      <text x="350" y="1052" class="lbl-xs" text-anchor="middle">← CO₂</text>
+      <text x="430" y="1092" text-anchor="middle" class="lbl-xs">微血管：釋出氧氣與養分，帶走二氧化碳與廢物</text>
+    </g>
+
+    <!-- ===== 左側標示 ===== -->
+    <g class="lbl" text-anchor="end">
+      <text x="192" y="226">鼻腔・咽<tspan x="192" dy="17" class="lbl-en">Nasal cavity / Pharynx</tspan></text>
+      <path class="lead" d="M196 220 L352 236"/><circle cx="352" cy="236" r="3" fill="#5c4a32"/>
+      <text x="192" y="330">喉（聲帶所在）<tspan x="192" dy="17" class="lbl-en">Larynx</tspan></text>
+      <path class="lead" d="M196 324 L408 324"/><circle cx="408" cy="324" r="3" fill="#5c4a32"/>
+      <text x="192" y="412">氣管<tspan x="192" dy="17" class="lbl-en">Trachea</tspan></text>
+      <path class="lead" d="M196 406 L414 406"/><circle cx="414" cy="406" r="3" fill="#5c4a32"/>
+      <text x="192" y="470">上腔靜脈<tspan x="192" dy="17" class="lbl-en">Superior vena cava</tspan></text>
+      <path class="lead" d="M196 464 L406 492"/><circle cx="406" cy="492" r="3" fill="#5c4a32"/>
+      <text x="192" y="528">右肺上葉<tspan x="192" dy="17" class="lbl-en">Upper lobe</tspan></text>
+      <path class="lead" d="M196 522 L292 540"/><circle cx="292" cy="540" r="3" fill="#5c4a32"/>
+      <text x="192" y="588">肺動脈（缺氧血）<tspan x="192" dy="17" class="lbl-en">Pulmonary artery</tspan></text>
+      <path class="lead" d="M196 582 L336 596"/><circle cx="336" cy="596" r="3" fill="#5c4a32"/>
+      <text x="192" y="636">右主支氣管<tspan x="192" dy="17" class="lbl-en">Main bronchus</tspan></text>
+      <path class="lead" d="M196 630 L372 612"/><circle cx="372" cy="612" r="3" fill="#5c4a32"/>
+      <text x="192" y="686">肺靜脈（含氧血）<tspan x="192" dy="17" class="lbl-en">Pulmonary vein</tspan></text>
+      <path class="lead" d="M196 680 L362 672"/><circle cx="362" cy="672" r="3" fill="#5c4a32"/>
+      <text x="192" y="734">右肺中葉<tspan x="192" dy="17" class="lbl-en">Middle lobe</tspan></text>
+      <path class="lead" d="M196 728 L336 716"/><circle cx="336" cy="716" r="3" fill="#5c4a32"/>
+      <text x="192" y="804">右肺下葉<tspan x="192" dy="17" class="lbl-en">Lower lobe</tspan></text>
+      <path class="lead" d="M196 798 L266 802"/><circle cx="266" cy="802" r="3" fill="#5c4a32"/>
+      <text x="192" y="876">下腔靜脈<tspan x="192" dy="17" class="lbl-en">Inferior vena cava</tspan></text>
+      <path class="lead" d="M196 870 L396 872"/><circle cx="396" cy="872" r="3" fill="#5c4a32"/>
+      <text x="192" y="944">橫膈膜<tspan x="192" dy="17" class="lbl-en">Diaphragm</tspan></text>
+      <path class="lead" d="M196 938 L300 902"/><circle cx="300" cy="902" r="3" fill="#5c4a32"/>
+      <text x="192" y="1050">體循環<tspan x="192" dy="17" class="lbl-en">Systemic circulation</tspan></text>
+      <path class="lead" d="M196 1044 L292 1044"/><circle cx="292" cy="1044" r="3" fill="#5c4a32"/>
+    </g>
+    <!-- ===== 右側標示 ===== -->
+    <g class="lbl" text-anchor="start">
+      <text x="676" y="300">頸動脈・頸靜脈<tspan x="676" dy="17" class="lbl-en">Carotid / Jugular</tspan></text>
+      <path class="lead" d="M672 294 L474 344"/><circle cx="474" cy="344" r="3" fill="#5c4a32"/>
+      <text x="676" y="476">主動脈弓<tspan x="676" dy="17" class="lbl-en">Aortic arch</tspan></text>
+      <path class="lead" d="M672 470 L536 492"/><circle cx="536" cy="492" r="3" fill="#5c4a32"/>
+      <text x="676" y="534">左肺上葉<tspan x="676" dy="17" class="lbl-en">Upper lobe</tspan></text>
+      <path class="lead" d="M672 528 L580 528"/><circle cx="580" cy="528" r="3" fill="#5c4a32"/>
+      <text x="676" y="584">肺動脈幹<tspan x="676" dy="17" class="lbl-en">Pulmonary trunk</tspan></text>
+      <path class="lead" d="M672 578 L500 598"/><circle cx="500" cy="598" r="3" fill="#5c4a32"/>
+      <text x="676" y="636">左主支氣管<tspan x="676" dy="17" class="lbl-en">Main bronchus</tspan></text>
+      <path class="lead" d="M672 630 L506 622"/><circle cx="506" cy="622" r="3" fill="#5c4a32"/>
+      <text x="676" y="700">心臟<tspan x="676" dy="17" class="lbl-en">Heart（四腔室）</tspan></text>
+      <path class="lead" d="M672 694 L566 760"/><circle cx="566" cy="760" r="3" fill="#5c4a32"/>
+      <text x="676" y="760">細支氣管<tspan x="676" dy="17" class="lbl-en">Bronchiole</tspan></text>
+      <path class="lead" d="M672 754 L602 762"/><circle cx="602" cy="762" r="3" fill="#5c4a32"/>
+      <text x="676" y="816">左肺下葉<tspan x="676" dy="17" class="lbl-en">Lower lobe</tspan></text>
+      <path class="lead" d="M672 810 L594 812"/><circle cx="594" cy="812" r="3" fill="#5c4a32"/>
+      <text x="676" y="866">心尖（朝左下）<tspan x="676" dy="17" class="lbl-en">Apex</tspan></text>
+      <path class="lead" d="M672 860 L566 822"/><circle cx="566" cy="822" r="3" fill="#5c4a32"/>
+      <text x="676" y="962">降主動脈<tspan x="676" dy="17" class="lbl-en">Descending aorta</tspan></text>
+      <path class="lead" d="M672 956 L470 972"/><circle cx="470" cy="972" r="3" fill="#5c4a32"/>
+      <text x="676" y="1016">心肺以外的全身</text>
+      <text x="676" y="1040" class="lbl-s">主動脈把血送往全身，</text>
+      <text x="676" y="1062" class="lbl-s">腔靜脈再把血送回右心房</text>
+      <path class="lead" d="M672 1010 L568 1030"/><circle cx="568" cy="1030" r="3" fill="#5c4a32"/>
+    </g>
+    <!-- 空氣流向（主圖） -->
+    <path class="air" d="M330 160 C380 165 410 180 428 215 C434 250 430 300 430 340" marker-end="url(#mAir)"/>
+    <text x="250" y="150" class="lbl-s" fill="#b8690c">空氣 吸入 ↓ 呼出 ↑</text>
+  </g>
+
+  <!-- ================= 右側面板 A：上呼吸道側面 ================= -->
+  <rect x="860" y="130" width="430" height="400" class="panel"/>
+  <text x="878" y="162" class="ptitle">A　上呼吸道（側面剖視）</text>
+  <g transform="translate(975,175) scale(0.82)">
+    <!-- 頭頸側面輪廓 -->
+    <path class="body" d="M200 10 C110 10 50 60 45 120 L30 150 C20 170 5 185 15 198 C25 205 40 205 45 210 C40 225 42 235 48 240 C42 250 42 262 50 270 C44 285 50 300 70 310 C100 322 130 320 150 314 L170 325 L170 425 L300 425 L300 300 C305 270 315 230 320 170 C330 80 280 10 200 10 Z"/>
+    <!-- 鼻腔 -->
+    <path d="M20 192 C40 150 120 130 200 140 L206 200 C150 206 80 210 45 208 Z" fill="#fbe9d9" stroke="#c9ad8d" stroke-width="1.5"/>
+    <path d="M90 158 q35 -10 70 4 M85 176 q40 -10 85 4 M92 193 q35 -8 70 2" fill="none" stroke="#d99c8a" stroke-width="4" stroke-linecap="round"/>
+    <!-- 咽（後壁）-->
+    <path d="M206 140 L206 300 L240 300 L240 140 Z" fill="#f9dcd2" stroke="none"/>
+    <line x1="240" y1="140" x2="240" y2="330" stroke="#c9ad8d" stroke-width="2.5"/>
+    <!-- 硬顎／軟顎／懸壅垂 -->
+    <path d="M45 208 L165 208" stroke="#d4a857" stroke-width="7" stroke-linecap="round"/>
+    <path d="M165 208 C185 210 200 222 208 242" stroke="#e39a86" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <!-- 口腔 + 舌 -->
+    <path d="M55 262 C90 232 160 232 198 256 C206 290 196 318 186 340 L128 322 C96 302 70 286 55 262 Z" fill="#e8847a" stroke="#c4645a" stroke-width="1.5"/>
+    <!-- 會厭 -->
+    <path d="M186 318 C196 300 212 290 222 292 C218 304 208 318 196 326 Z" fill="#e9c7a0" stroke="#a88a3c" stroke-width="1.5"/>
+    <!-- 食道（後） -->
+    <path d="M216 330 L216 425 L240 425 L240 330 Z" fill="#f2c6bd" stroke="#c97d74" stroke-width="1.5"/>
+    <!-- 喉 -->
+    <path d="M176 322 L214 322 L218 340 Q218 364 196 368 Q174 364 174 340 Z" class="airway"/>
+    <path d="M186 342 L206 342 M184 350 L208 350" stroke="#a88a3c" stroke-width="2"/>
+    <!-- 氣管 -->
+    <rect x="181" y="368" width="30" height="57" class="airway" rx="3"/>
+    <path d="M183 380 q13 -4 26 0 M183 394 q13 -4 26 0 M183 408 q13 -4 26 0 M183 422 q13 -4 26 0" class="ring"/>
+    <!-- 空氣路徑 -->
+    <path class="air" d="M-10 182 C40 170 110 158 185 162 C215 170 224 200 224 240 C224 270 212 300 206 320 C200 345 198 380 198 425" marker-end="url(#mAir)"/>
+  </g>
+  <!-- 面板 A 標示 -->
+  <g class="lbl-s">
+    <text x="880" y="300" text-anchor="start">鼻腔</text><path class="lead" d="M918 296 L1060 312"/><circle cx="1060" cy="312" r="2.5" fill="#5c4a32"/>
+    <text x="880" y="340" text-anchor="start">硬顎・軟顎</text><path class="lead" d="M968 336 L1082 346"/><circle cx="1082" cy="346" r="2.5" fill="#5c4a32"/>
+    <text x="880" y="380" text-anchor="start">口腔・舌</text><path class="lead" d="M948 376 L1070 400"/><circle cx="1070" cy="400" r="2.5" fill="#5c4a32"/>
+    <text x="880" y="422" text-anchor="start">會厭</text><path class="lead" d="M918 418 L1140 430"/><circle cx="1140" cy="430" r="2.5" fill="#5c4a32"/>
+    <text x="880" y="464" text-anchor="start">喉（聲帶）</text><path class="lead" d="M962 460 L1123 462"/><circle cx="1123" cy="462" r="2.5" fill="#5c4a32"/>
+    <text x="880" y="506" text-anchor="start">氣管</text><path class="lead" d="M918 502 L1125 500"/><circle cx="1125" cy="500" r="2.5" fill="#5c4a32"/>
+    <text x="1272" y="312" text-anchor="end">咽</text><path class="lead" d="M1250 308 L1158 326"/><circle cx="1158" cy="326" r="2.5" fill="#5c4a32"/>
+    <text x="1272" y="506" text-anchor="end">食道</text><path class="lead" d="M1236 502 L1163 500"/><circle cx="1163" cy="500" r="2.5" fill="#5c4a32"/>
+    <text x="880" y="196" class="lbl-xs">吞嚥時會厭會蓋住喉口，</text>
+    <text x="880" y="214" class="lbl-xs">避免食物進入氣管。</text>
+  </g>
+
+  <!-- ================= 面板 B：肺泡氣體交換 ================= -->
+  <rect x="860" y="560" width="430" height="330" class="panel"/>
+  <text x="878" y="592" class="ptitle">B　肺泡的氣體交換（放大）</text>
+  <g>
+    <!-- 細支氣管與肺泡囊 -->
+    <path class="bronchus" stroke-width="18" d="M880 620 C920 640 940 680 960 712"/>
+    <path class="bronchus" stroke-width="10" d="M960 712 L985 735 M960 712 L945 745"/>
+    <g fill="url(#alvGrad)" stroke="#c97d74" stroke-width="1.8">
+      <circle cx="1000" cy="760" r="22"/><circle cx="1032" cy="748" r="20"/><circle cx="1022" cy="788" r="21"/>
+      <circle cx="990" cy="800" r="20"/><circle cx="958" cy="782" r="20"/><circle cx="940" cy="760" r="18"/>
+      <circle cx="975" cy="822" r="19"/><circle cx="1010" cy="826" r="18"/><circle cx="950" cy="815" r="17"/>
+    </g>
+    <!-- 微血管網 -->
+    <path d="M930 745 C960 735 990 735 1010 740 M925 795 C950 812 985 835 1020 845 M1040 770 C1050 795 1045 815 1030 835" fill="none" stroke="url(#capGrad)" stroke-width="3" opacity=".8"/>
+    <text x="880" y="672" class="lbl-xs">細支氣管</text>
+    <text x="892" y="862" class="lbl-xs">肺泡囊（像一串葡萄）</text>
+    <!-- 單一肺泡放大 -->
+    <circle cx="1175" cy="745" r="72" fill="url(#alvGrad)" stroke="#c97d74" stroke-width="2.5"/>
+    <!-- 包覆的微血管 -->
+    <path d="M1082 690 C1095 720 1092 760 1105 795 C1120 830 1180 845 1230 830 C1262 820 1268 790 1262 760" fill="none" stroke="url(#capGrad)" stroke-width="16" stroke-linecap="round"/>
+    <!-- 紅血球 -->
+    <g fill="#f7eded" stroke="#9c3a35" stroke-width="1.2">
+      <ellipse cx="1092" cy="722" rx="7" ry="4"/><ellipse cx="1100" cy="770" rx="7" ry="4"/><ellipse cx="1130" cy="815" rx="7" ry="4"/>
+      <ellipse cx="1180" cy="836" rx="7" ry="4"/><ellipse cx="1225" cy="830" rx="7" ry="4"/><ellipse cx="1260" cy="790" rx="7" ry="4"/>
+    </g>
+    <!-- 氣體交換箭頭 -->
+    <path d="M1150 782 L1122 808" stroke="#c8403a" stroke-width="3" fill="none" marker-end="url(#mR)"/>
+    <path d="M1104 766 L1134 742" stroke="#3a63b0" stroke-width="3" fill="none" marker-end="url(#mB)"/>
+    <text x="1150" y="804" class="lbl-xs" fill="#c8403a">O₂ 進入血液</text>
+    <text x="1070" y="716" class="lbl-xs" fill="#3a63b0" text-anchor="end">CO₂ 排入肺泡</text>
+    <!-- 空氣進出 -->
+    <path class="air" d="M1175 640 L1175 676" marker-end="url(#mAir)"/>
+    <text x="1186" y="652" class="lbl-xs" fill="#b8690c">空氣進出</text>
+    <text x="1180" y="730" class="lbl-s" text-anchor="middle" font-weight="700">肺泡</text>
+    <text x="1180" y="750" class="lbl-xs" text-anchor="middle">Alveolus</text>
+    <text x="1080" y="862" class="lbl-xs">缺氧血 →</text>
+    <text x="1275" y="862" class="lbl-xs" text-anchor="end">→ 含氧血</text>
+    <text x="1275" y="690" class="lbl-xs" text-anchor="end">微血管</text>
+    <text x="1275" y="708" class="lbl-xs" text-anchor="end">Capillary</text>
+    <text x="878" y="884" class="lbl-xs">肺泡壁與微血管壁極薄（約 0.5 µm），氣體靠擴散作用通過。</text>
+  </g>
+
+  <!-- ================= 面板 C：循環路徑 ================= -->
+  <rect x="860" y="920" width="430" height="348" class="panel"/>
+  <text x="878" y="952" class="ptitle">C　血液循環路徑：肺循環 ＋ 體循環</text>
+  <g>
+    <!-- 肺 -->
+    <rect x="1000" y="972" width="150" height="40" class="lung" rx="20"/>
+    <text x="1075" y="999" text-anchor="middle" class="lbl-s" font-weight="700">肺（氣體交換）</text>
+    <!-- 心臟四格 -->
+    <g>
+      <rect x="1010" y="1060" width="65" height="40" fill="#5b7fc6" stroke="#3a63b0" stroke-width="1.5"/>
+      <rect x="1010" y="1100" width="65" height="40" fill="#3a63b0" stroke="#3a63b0" stroke-width="1.5"/>
+      <rect x="1075" y="1060" width="65" height="40" fill="#d6665f" stroke="#c8403a" stroke-width="1.5"/>
+      <rect x="1075" y="1100" width="65" height="40" fill="#c8403a" stroke="#c8403a" stroke-width="1.5"/>
+      <text x="1042" y="1085" class="chamber" text-anchor="middle">右心房</text>
+      <text x="1042" y="1125" class="chamber" text-anchor="middle">右心室</text>
+      <text x="1107" y="1085" class="chamber" text-anchor="middle">左心房</text>
+      <text x="1107" y="1125" class="chamber" text-anchor="middle">左心室</text>
+    </g>
+    <!-- 全身 -->
+    <rect x="1000" y="1190" width="150" height="40" class="box"/>
+    <text x="1075" y="1216" text-anchor="middle" class="lbl-s" font-weight="700">全身組織</text>
+    <!-- 肺循環 -->
+    <path class="flowB" d="M1010 1120 L960 1120 L960 992 L996 992" marker-end="url(#mB)"/>
+    <path class="flowR" d="M1154 992 L1190 992 L1190 1080 L1144 1080" marker-end="url(#mR)"/>
+    <!-- 體循環 -->
+    <path class="flowR" d="M1140 1120 L1190 1120 L1190 1210 L1154 1210" marker-end="url(#mR)"/>
+    <path class="flowB" d="M996 1210 L960 1210 L960 1080 L1006 1080" marker-end="url(#mB)"/>
+    <!-- 文字 -->
+    <text x="950" y="1050" class="lbl-xs" text-anchor="end">肺動脈</text>
+    <text x="1200" y="1050" class="lbl-xs">肺靜脈</text>
+    <text x="1200" y="1170" class="lbl-xs">主動脈</text>
+    <text x="950" y="1170" class="lbl-xs" text-anchor="end">上下腔靜脈</text>
+    <text x="1075" y="1040" text-anchor="middle" class="lbl-xs" fill="#2d4a22" font-weight="700">▲ 肺循環（小循環）</text>
+    <text x="1075" y="1168" text-anchor="middle" class="lbl-xs" fill="#2d4a22" font-weight="700">▼ 體循環（大循環）</text>
+    <!-- 步驟編號 -->
+    <g>
+      <circle cx="960" cy="1150" r="10" class="veinF"/><text x="960" y="1154.5" class="step" text-anchor="middle">1</text>
+      <circle cx="960" cy="1050" r="10" class="veinF"/><text x="960" y="1054.5" class="step" text-anchor="middle">2</text>
+      <circle cx="1190" cy="1050" r="10" class="artF"/><text x="1190" y="1054.5" class="step" text-anchor="middle">3</text>
+      <circle cx="1190" cy="1150" r="10" class="artF"/><text x="1190" y="1154.5" class="step" text-anchor="middle">4</text>
+    </g>
+    <text x="878" y="1244" class="lbl-xs">① 缺氧血由腔靜脈回右心　② 右心室打到肺換氣</text>
+    <text x="878" y="1262" class="lbl-xs">③ 含氧血由肺靜脈回左心　④ 左心室打到全身，周而復始</text>
+  </g>
+
+  <!-- ================= 下方說明 ================= -->
+  <line x1="40" y1="1290" x2="1280" y2="1290" stroke="#d9cdb8" stroke-width="1.5"/>
+  <!-- 呼吸過程 -->
+  <g transform="translate(40,1322)">
+    <text x="0" y="0" class="noteh">呼吸的過程：橫膈膜是主要的呼吸肌</text>
+    <!-- 吸氣小圖 -->
+    <g transform="translate(0,22)">
+      <rect x="0" y="0" width="120" height="110" fill="#fff" stroke="#d9cdb8" rx="8"/>
+      <path d="M45 14 L45 40" class="airway" stroke-width="6"/>
+      <path d="M20 40 C8 60 10 90 28 96 L44 94 L44 42 Z M70 40 C82 60 80 90 62 96 L46 94 L46 42 Z" class="lung"/>
+      <path d="M12 102 Q45 88 78 102" fill="none" stroke="#c98b6d" stroke-width="5" stroke-linecap="round"/>
+      <path d="M45 2 L45 12" class="air" stroke-dasharray="none" marker-end="url(#mAir)"/>
+      <text x="90" y="60" class="lbl-xs" text-anchor="middle" fill="#2d4a22" font-weight="700">吸氣</text>
+      <text x="90" y="78" class="lbl-xs" text-anchor="middle">橫膈下降</text>
+      <text x="90" y="94" class="lbl-xs" text-anchor="middle">胸腔變大</text>
+    </g>
+    <g transform="translate(130,22)">
+      <rect x="0" y="0" width="120" height="110" fill="#fff" stroke="#d9cdb8" rx="8"/>
+      <path d="M45 14 L45 40" class="airway" stroke-width="6"/>
+      <path d="M26 42 C16 56 16 80 30 86 L44 84 L44 44 Z M64 42 C74 56 74 80 60 86 L46 84 L46 44 Z" class="lung"/>
+      <path d="M12 96 Q45 68 78 96" fill="none" stroke="#c98b6d" stroke-width="5" stroke-linecap="round"/>
+      <path d="M45 12 L45 2" class="air" stroke-dasharray="none" marker-end="url(#mAir)"/>
+      <text x="90" y="60" class="lbl-xs" text-anchor="middle" fill="#2d4a22" font-weight="700">呼氣</text>
+      <text x="90" y="78" class="lbl-xs" text-anchor="middle">橫膈上升</text>
+      <text x="90" y="94" class="lbl-xs" text-anchor="middle">胸腔變小</text>
+    </g>
+    <g class="note" transform="translate(270,22)">
+      <text y="16"><tspan font-weight="700" fill="#2d4a22">吸氣</tspan>：橫膈膜收縮下降、肋間肌將肋骨上提，胸腔容積變大、</text>
+      <text y="40">壓力下降，空氣由鼻腔→咽→喉→氣管→支氣管→細支氣管進入肺泡。</text>
+      <text y="72"><tspan font-weight="700" fill="#2d4a22">呼氣</tspan>：橫膈膜放鬆上升、肺臟彈性回縮，胸腔變小、壓力上升，</text>
+      <text y="96">含二氧化碳的氣體沿原路排出。安靜時呼氣是被動的，不需用力。</text>
+      <text y="124" class="lbl-xs">腹式（橫膈）呼吸能讓肺底部充分換氣，是健康自主管理中最容易練習的基本功。</text>
+    </g>
+  </g>
+  <!-- 數據 -->
+  <g transform="translate(40,1506)">
+    <text x="0" y="0" class="noteh">呼吸與循環的小數據（成人安靜狀態，約略值）</text>
+    <g class="note">
+      <g transform="translate(0,18)">
+        <rect width="236" height="92" fill="#fff" stroke="#d9cdb8" rx="8"/>
+        <text x="14" y="30" font-size="26" font-weight="700" fill="#4a7c3f">12–20 次/分</text>
+        <text x="14" y="54" class="lbl-xs">呼吸頻率</text>
+        <text x="14" y="76" class="lbl-xs">每次約吸入 500 mL 空氣（潮氣量）</text>
+      </g>
+      <g transform="translate(252,18)">
+        <rect width="236" height="92" fill="#fff" stroke="#d9cdb8" rx="8"/>
+        <text x="14" y="30" font-size="26" font-weight="700" fill="#c8403a">60–100 次/分</text>
+        <text x="14" y="54" class="lbl-xs">心跳頻率</text>
+        <text x="14" y="76" class="lbl-xs">每分鐘約打出 5 公升血液（心輸出量）</text>
+      </g>
+      <g transform="translate(504,18)">
+        <rect width="236" height="92" fill="#fff" stroke="#d9cdb8" rx="8"/>
+        <text x="14" y="30" font-size="26" font-weight="700" fill="#b8960c">約 3 億個</text>
+        <text x="14" y="54" class="lbl-xs">肺泡數量</text>
+        <text x="14" y="76" class="lbl-xs">總表面積約 70 m²，接近半個網球場</text>
+      </g>
+      <g transform="translate(756,18)">
+        <rect width="236" height="92" fill="#fff" stroke="#d9cdb8" rx="8"/>
+        <text x="14" y="30" font-size="26" font-weight="700" fill="#3a63b0">約 1 分鐘</text>
+        <text x="14" y="54" class="lbl-xs">一滴血繞行全身一圈</text>
+        <text x="14" y="76" class="lbl-xs">全身血管相連總長可達數萬公里</text>
+      </g>
+      <g transform="translate(1008,18)">
+        <rect width="232" height="92" fill="#fff" stroke="#d9cdb8" rx="8"/>
+        <text x="14" y="30" font-size="26" font-weight="700" fill="#2d4a22">右三左二</text>
+        <text x="14" y="54" class="lbl-xs">肺葉數量</text>
+        <text x="14" y="76" class="lbl-xs">左肺較小，留出空間給偏左的心臟</text>
+      </g>
+    </g>
+  </g>
+  <text x="40" y="1636" class="lbl-xs">全人健康自主管理推廣協會　Holistic Health Self-Management Association　｜　本圖為教學示意圖，構造位置與比例經簡化，非醫療診斷用途。</text>
+</svg>
