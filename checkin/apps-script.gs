@@ -6,6 +6,9 @@
  */
 var TZ = "Asia/Taipei";
 var SHEET_NAME = "簽到紀錄";
+// 「線上簽到單」試算表的 ID（網址 /spreadsheets/d/ 後面那一串）。
+// 有填時可以用獨立的 Apps Script 專案（script.google.com 新增專案）部署，不必從試算表開啟。
+var SPREADSHEET_ID = "1k0IFCW2EssIMf5wKi69E9iKjmob08ElawxYoVDRiHog";
 var HEADER = ["簽到時間", "會議", "姓名", "職稱", "來源"];
 
 function doGet(e) {
@@ -29,7 +32,7 @@ function doGet(e) {
 }
 
 function sheet_() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ss = SPREADSHEET_ID ? SpreadsheetApp.openById(SPREADSHEET_ID) : SpreadsheetApp.getActiveSpreadsheet();
   var sh = ss.getSheetByName(SHEET_NAME);
   if (!sh) {
     sh = ss.insertSheet(SHEET_NAME);
