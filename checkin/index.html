@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>理監事會議 線上簽到</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="全人健康自主管理推廣協會 理監事會議線上簽到，點自己的名字即完成簽到。">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="理監事會議 線上簽到">
+<meta property="og:description" content="全人健康自主管理推廣協會｜點自己的名字即完成簽到">
+<meta property="og:image" content="https://healthselfmanage.org.tw/assets/logo.jpg">
+<meta property="og:url" content="https://healthselfmanage.org.tw/checkin/">
+<link rel="icon" type="image/jpeg" href="../assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+  /* 版面：單欄手機優先；上方會議資訊與出席統計，下方依理事會／監事會分組的名字按鈕 */
+  :root {
+    --bg:#fdfbf7; --fg:#3a3a32; --muted:#6b6b5e; --surface:#ffffff; --line:rgba(45,74,34,.16);
+    --forest:#2d4a22; --forest-mid:#4a7c3f; --forest-light:#7ab648; --cream:#f5f0e8;
+    --sun:#f5a623; --gold:#b8960c;
+    --btn-bg:#ffffff; --btn-fg:#2d4a22; --done-bg:#eaf3e2; --done-fg:#2d4a22; --done-line:#7ab648;
+    --bar-bg:rgba(253,251,247,.94); --shadow:0 2px 12px rgba(45,74,34,.08);
+    --font-sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg:#131813; --fg:#ebe7da; --muted:#a6ab9b; --surface:#1d241e; --line:rgba(235,231,218,.14);
+    --forest:#dfe9d3; --cream:#1f2a1f;
+    --btn-bg:#243126; --btn-fg:#dfe9d3; --done-bg:#2c4a2a; --done-fg:#dfe9d3; --done-line:#7ab648;
+    --bar-bg:rgba(19,24,19,.94); --shadow:0 2px 12px rgba(0,0,0,.3); color-scheme:dark } }
+  :root[data-theme="dark"] {
+    --bg:#131813; --fg:#ebe7da; --muted:#a6ab9b; --surface:#1d241e; --line:rgba(235,231,218,.14);
+    --forest:#dfe9d3; --cream:#1f2a1f;
+    --btn-bg:#243126; --btn-fg:#dfe9d3; --done-bg:#2c4a2a; --done-fg:#dfe9d3; --done-line:#7ab648;
+    --bar-bg:rgba(19,24,19,.94); --shadow:0 2px 12px rgba(0,0,0,.3); color-scheme:dark }
+
+  * { box-sizing:border-box }
+  html, body { margin:0 }
+  body { background:var(--bg); color:var(--fg); font-family:var(--font-sans); line-height:1.6; -webkit-font-smoothing:antialiased }
+  .page { max-width:520px; margin:0 auto; padding-block:16px 120px; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); display:flex; flex-direction:column; gap:14px }
+
+  header.top { display:flex; align-items:center; gap:12px }
+  header.top img { width:52px; height:52px; border-radius:12px; flex:none; object-fit:cover }
+  header.top .org { margin:0; font-size:13px; letter-spacing:.08em; color:var(--muted) }
+  header.top h1 { margin:2px 0 0; font-size:20px; font-weight:700; letter-spacing:.04em; line-height:1.3; color:var(--forest); text-wrap:balance }
+
+  .meta { background:var(--cream); border-radius:14px; padding:12px 14px; display:grid; grid-template-columns:auto 1fr; gap:4px 12px; font-size:14px }
+  .meta dt { color:var(--muted); white-space:nowrap }
+  .meta dd { margin:0; min-width:0; overflow-wrap:anywhere }
+
+  .stats { display:grid; grid-template-columns:1fr 1fr; gap:8px }
+  .stat { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:10px 12px; box-shadow:var(--shadow) }
+  .stat .k { font-size:12px; color:var(--muted); letter-spacing:.06em }
+  .stat .v { font-size:22px; font-weight:700; color:var(--forest); font-variant-numeric:tabular-nums; line-height:1.2 }
+  .stat .v small { font-size:13px; font-weight:400; color:var(--muted) }
+
+  .notice { border-radius:12px; padding:10px 14px; font-size:14px; background:#fff4dc; color:#6b4a00; border:1px solid #f1d28a }
+  :root[data-theme="dark"] .notice { background:#3a2f12; color:#f1d28a; border-color:#6b4a00 }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .notice { background:#3a2f12; color:#f1d28a; border-color:#6b4a00 } }
+
+  .hint { margin:0; font-size:14px; color:var(--muted) }
+
+  section.group h2 { margin:6px 0 8px; font-size:14px; letter-spacing:.14em; color:var(--muted); font-weight:500; display:flex; align-items:center; gap:8px }
+  section.group h2::after { content:""; flex:1; height:1px; background:var(--line) }
+  .grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:8px }
+  @media (max-width:360px) { .grid { grid-template-columns:repeat(2, 1fr) } }
+  .member { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; min-height:70px; padding:8px 6px; border-radius:14px; border:1px solid var(--line); background:var(--btn-bg); color:var(--btn-fg); font:inherit; cursor:pointer; -webkit-tap-highlight-color:transparent; transition:transform .08s ease, background .15s ease; min-width:0 }
+  .member:active { transform:scale(.97) }
+  .member:focus-visible { outline:2px solid var(--sun); outline-offset:2px }
+  .member .n { font-size:19px; font-weight:700; letter-spacing:.12em; line-height:1.2 }
+  .member .r { font-size:11.5px; color:var(--muted); letter-spacing:.04em }
+  .member .t { font-size:11px; color:var(--forest-mid); font-variant-numeric:tabular-nums; display:none }
+  .member.done { background:var(--done-bg); color:var(--done-fg); border-color:var(--done-line) }
+  .member.done .n::before { content:"✓ "; color:var(--forest-light) }
+  .member.done .t { display:block }
+  .member.done .r { display:none }
+  .member[disabled] { opacity:.55; cursor:not-allowed }
+  .member.me { box-shadow:0 0 0 3px rgba(122,182,72,.35) }
+
+  .other { display:flex; gap:8px; align-items:stretch }
+  .other input { flex:1; min-width:0; font:inherit; font-size:16px; padding:10px 12px; border-radius:12px; border:1px solid var(--line); background:var(--surface); color:var(--fg) }
+  .other button { font:inherit; font-size:15px; font-weight:500; padding:10px 16px; border-radius:12px; border:1px solid var(--line); background:var(--btn-bg); color:var(--btn-fg); cursor:pointer; white-space:nowrap }
+  .other input:focus-visible, .other button:focus-visible { outline:2px solid var(--sun); outline-offset:2px }
+
+  /* 確認列（固定在底部） */
+  .confirm { position:fixed; left:0; right:0; bottom:0; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); padding-top:12px; padding-bottom:calc(12px + env(safe-area-inset-bottom, 0px)); background:var(--bar-bg); backdrop-filter:blur(8px); border-top:1px solid var(--line); z-index:20 }
+  .confirm .in { max-width:520px; margin:0 auto; display:flex; flex-direction:column; gap:10px }
+  .confirm .q { margin:0; font-size:16px }
+  .confirm .q b { font-size:20px; letter-spacing:.12em; color:var(--forest) }
+  .confirm .btns { display:grid; grid-template-columns:1fr 2fr; gap:8px }
+  .confirm button { font:inherit; font-size:16px; font-weight:600; min-height:48px; border-radius:12px; border:1px solid var(--line); cursor:pointer; -webkit-tap-highlight-color:transparent }
+  .confirm .cancel { background:var(--btn-bg); color:var(--btn-fg) }
+  .confirm .ok { background:var(--forest-mid); color:#fff; border-color:transparent }
+  .confirm .ok[disabled] { opacity:.6; cursor:wait }
+  .confirm button:focus-visible { outline:2px solid var(--sun); outline-offset:2px }
+
+  .toast { position:fixed; left:50%; transform:translateX(-50%); bottom:calc(24px + env(safe-area-inset-bottom, 0px)); max-width:calc(100% - 32px); background:var(--forest); color:#fff; padding:12px 18px; border-radius:999px; font-size:15px; box-shadow:0 8px 24px rgba(0,0,0,.25); z-index:30; text-align:center }
+  :root[data-theme="dark"] .toast { background:#dfe9d3; color:#1f2a1f }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .toast { background:#dfe9d3; color:#1f2a1f } }
+  .toast.err { background:#9b2c2c; color:#fff }
+
+  footer.foot { margin-top:12px; font-size:12px; color:var(--muted); text-align:center }
+  footer.foot a { color:inherit }
+  @media (prefers-reduced-motion: reduce) { .member { transition:none } }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="top">
+    <img src="../assets/logo.jpg" alt="全人健康自主管理推廣協會 標誌">
+    <div>
+      <p class="org">全人健康自主管理推廣協會</p>
+      <h1 id="meetingTitle">理監事會議 線上簽到</h1>
+    </div>
+  </header>
+
+  <dl class="meta">
+    <dt>時間</dt><dd id="meetingTime">—</dd>
+    <dt>地點</dt><dd id="meetingPlace">—</dd>
+  </dl>
+
+  <div class="stats">
+    <div class="stat"><div class="k">理事 已簽到</div><div class="v"><span id="statDirectors">0</span><small> ／ <span id="statDirectorsTotal">0</span> 人</small></div></div>
+    <div class="stat"><div class="k">監事 已簽到</div><div class="v"><span id="statSupervisors">0</span><small> ／ <span id="statSupervisorsTotal">0</span> 人</small></div></div>
+  </div>
+
+  <div class="notice" id="setupNotice" hidden>簽到系統尚未啟用：請管理員依 README 完成 Apps Script 部署並填入 config.js 的 scriptUrl。</div>
+  <div class="notice" id="offlineNotice" hidden>目前無法連線到簽到系統，請稍後再試或聯絡秘書長。</div>
+
+  <p class="hint" id="hint">請點自己的名字完成簽到。簽到後名字會顯示 ✓ 與時間。</p>
+
+  <div id="groups"></div>
+
+  <section class="group">
+    <h2>其他列席人員</h2>
+    <form class="other" id="otherForm">
+      <input id="otherName" type="text" maxlength="20" placeholder="輸入姓名" autocomplete="name" aria-label="列席人員姓名">
+      <button type="submit" id="otherBtn">簽到</button>
+    </form>
+  </section>
+
+  <footer class="foot">
+    <a href="../">回協會官網</a>
+  </footer>
+</div>
+
+<div class="confirm" id="confirm" hidden>
+  <div class="in">
+    <p class="q">以 <b id="confirmName"></b> <span id="confirmRole"></span> 簽到？</p>
+    <div class="btns">
+      <button type="button" class="cancel" id="confirmCancel">取消</button>
+      <button type="button" class="ok" id="confirmOk">確認簽到</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden role="status" aria-live="polite"></div>
+
+<script src="config.js?v=20261106"></script>
+<script>
+(function () {
+  var CFG = window.CHECKIN_CONFIG || {};
+  var meeting = CFG.meeting || {};
+  var groups = CFG.groups || [];
+  var scriptUrl = (CFG.scriptUrl || "").trim();
+  var LS_KEY = "hhsma-checkin-" + (meeting.id || "");
+
+  var $ = function (id) { return document.getElementById(id); };
+  var text = function (id, v) { $(id).textContent = v; };
+
+  text("meetingTitle", meeting.title || "理監事會議 線上簽到");
+  text("meetingTime", meeting.time || "—");
+  text("meetingPlace", meeting.place || "—");
+  document.title = (meeting.title || "理監事會議") + " 線上簽到";
+
+  // ---- 名單按鈕 ----
+  var buttons = {}; // name -> button
+  var totals = { directors: 0, supervisors: 0 };
+  var groupsEl = $("groups");
+  groups.forEach(function (g) {
+    var sec = document.createElement("section");
+    sec.className = "group";
+    var h = document.createElement("h2");
+    h.textContent = g.name;
+    sec.appendChild(h);
+    var grid = document.createElement("div");
+    grid.className = "grid";
+    (g.members || []).forEach(function (m) {
+      var name = m[0], role = m[1] || "";
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "member";
+      b.setAttribute("data-name", name);
+      b.setAttribute("data-role", role);
+      b.innerHTML = '<span class="n"></span><span class="r"></span><span class="t"></span>';
+      b.querySelector(".n").textContent = name;
+      b.querySelector(".r").textContent = role;
+      b.addEventListener("click", function () { askConfirm(name, role); });
+      grid.appendChild(b);
+      buttons[name] = b;
+      if (g.count) {
+        if (/監事/.test(role)) totals.supervisors++; else totals.directors++;
+      }
+    });
+    sec.appendChild(grid);
+    groupsEl.appendChild(sec);
+  });
+  text("statDirectorsTotal", totals.directors);
+  text("statSupervisorsTotal", totals.supervisors);
+
+  // ---- 狀態 ----
+  var rows = [];
+  var me = null;
+  try { me = JSON.parse(localStorage.getItem(LS_KEY) || "null"); } catch (e) { me = null; }
+
+  function render() {
+    var byName = {};
+    rows.forEach(function (r) { if (!byName[r.name]) byName[r.name] = r; });
+    var d = 0, s = 0;
+    Object.keys(buttons).forEach(function (name) {
+      var b = buttons[name], r = byName[name];
+      b.classList.toggle("done", !!r);
+      b.querySelector(".t").textContent = r ? hhmm(r.time) + " 已簽到" : "";
+      b.classList.toggle("me", !!(me && me.name === name));
+    });
+    groups.forEach(function (g) {
+      if (!g.count) return;
+      (g.members || []).forEach(function (m) {
+        if (!byName[m[0]]) return;
+        if (/監事/.test(m[1] || "")) s++; else d++;
+      });
+    });
+    text("statDirectors", d);
+    text("statSupervisors", s);
+    if (me && byName[me.name]) {
+      text("hint", "您已於 " + hhmm(byName[me.name].time) + " 以「" + me.name + "」簽到完成，可直接關閉此頁。");
+    }
+  }
+
+  function hhmm(t) {
+    var m = /(\d{2}:\d{2})$/.exec(String(t || ""));
+    return m ? m[1] : String(t || "");
+  }
+
+  // ---- 與 Apps Script 溝通（JSONP，避免跨網域限制） ----
+  var cbCount = 0;
+  function api(params, cb) {
+    if (!scriptUrl) { cb({ ok: false, error: "尚未設定 scriptUrl" }); return; }
+    var cbName = "__hhsma_cb" + (++cbCount);
+    var s = document.createElement("script");
+    var done = false;
+    var timer = setTimeout(function () { finish({ ok: false, error: "timeout" }); }, 12000);
+    function finish(res) {
+      if (done) return; done = true;
+      clearTimeout(timer);
+      try { delete window[cbName]; } catch (e) { window[cbName] = undefined; }
+      if (s.parentNode) s.parentNode.removeChild(s);
+      cb(res);
+    }
+    window[cbName] = finish;
+    s.onerror = function () { finish({ ok: false, error: "network" }); };
+    var q = Object.keys(params).map(function (k) { return encodeURIComponent(k) + "=" + encodeURIComponent(params[k]); });
+    q.push("callback=" + cbName, "_=" + Date.now());
+    s.src = scriptUrl + (scriptUrl.indexOf("?") >= 0 ? "&" : "?") + q.join("&");
+    document.head.appendChild(s);
+  }
+
+  function load(silent) {
+    api({ action: "list", meeting: meeting.id || "" }, function (res) {
+      if (res && res.ok) {
+        rows = res.rows || [];
+        $("offlineNotice").hidden = true;
+        render();
+      } else if (!silent) {
+        $("offlineNotice").hidden = false;
+      }
+    });
+  }
+
+  // ---- 確認與簽到 ----
+  var pending = null;
+  function askConfirm(name, role) {
+    if (!scriptUrl) { toast("簽到系統尚未啟用，請聯絡秘書長。", true); return; }
+    pending = { name: name, role: role };
+    text("confirmName", name);
+    text("confirmRole", role ? "（" + role + "）" : "");
+    $("confirmOk").disabled = false;
+    $("confirm").hidden = false;
+    $("confirmOk").focus();
+  }
+  $("confirmCancel").addEventListener("click", function () { pending = null; $("confirm").hidden = true; });
+  $("confirmOk").addEventListener("click", function () {
+    if (!pending) return;
+    var p = pending;
+    $("confirmOk").disabled = true;
+    api({ action: "checkin", meeting: meeting.id || "", name: p.name, role: p.role, source: "web" }, function (res) {
+      $("confirm").hidden = true;
+      pending = null;
+      if (!res || !res.ok) {
+        toast("簽到失敗，請再試一次或聯絡秘書長。", true);
+        return;
+      }
+      me = { name: p.name, role: p.role };
+      try { localStorage.setItem(LS_KEY, JSON.stringify(me)); } catch (e) {}
+      $("otherName").value = "";
+      if (!rows.some(function (r) { return r.name === p.name; })) {
+        rows.push({ name: p.name, role: p.role, time: res.time || "" });
+      }
+      render();
+      toast(res.already ? "您已於 " + hhmm(res.time) + " 簽到過了" : "簽到完成 " + hhmm(res.time));
+      load(true);
+    });
+  });
+
+  $("otherForm").addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var name = $("otherName").value.trim();
+    if (!name) { $("otherName").focus(); return; }
+    askConfirm(name, "列席");
+  });
+
+  var toastTimer;
+  function toast(msg, isErr) {
+    var t = $("toast");
+    t.textContent = msg;
+    t.classList.toggle("err", !!isErr);
+    t.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.hidden = true; }, 3200);
+  }
+
+  // ---- 啟動 ----
+  if (!scriptUrl) {
+    $("setupNotice").hidden = false;
+    Object.keys(buttons).forEach(function (n) { buttons[n].disabled = true; });
+    $("otherBtn").disabled = true;
+  } else {
+    load(false);
+    setInterval(function () { load(true); }, 30000);
+    document.addEventListener("visibilitychange", function () { if (!document.hidden) load(true); });
+  }
+  render();
+})();
+</script>
+</body>
+</html>
