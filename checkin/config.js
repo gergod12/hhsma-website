@@ -6,7 +6,7 @@
    3. groups：理監事名單（與官網組織架構同步）
    ============================================ */
 window.CHECKIN_CONFIG = {
-  scriptUrl: "",
+  scriptUrl: "https://script.google.com/macros/s/AKfycbxEQBbPnnEVnwCqVjKDP4DZ6_iNWwAeQV927tgpmJEiddSru34hj_00liLtncaOSTfh/exec",
 
   meeting: {
     id: "2026-11-06",
