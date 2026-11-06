@@ -40,7 +40,19 @@ function sheet_() {
     sh.setFrozenRows(1);
     sh.getRange(1, 1, 1, HEADER.length).setFontWeight("bold");
   }
+  // 會議欄設為純文字，避免 Sheets 把 2026-11-06 自動轉成日期導致比對失敗
+  sh.getRange(1, 2, sh.getMaxRows(), 1).setNumberFormat("@");
   return sh;
+}
+
+function isDate_(d) {
+  return Object.prototype.toString.call(d) === "[object Date]" && !isNaN(d.getTime());
+}
+
+// 會議 id 正規化：舊資料若已被轉成日期，轉回 yyyy-MM-dd 字串
+function meetingKey_(v) {
+  if (isDate_(v)) return Utilities.formatDate(v, TZ, "yyyy-MM-dd");
+  return String(v || "").trim();
 }
 
 function list_(meeting) {
@@ -52,10 +64,10 @@ function list_(meeting) {
   for (var i = 0; i < values.length; i++) {
     var r = values[i];
     if (!r[2]) continue;
-    if (meeting && String(r[1]) !== String(meeting)) continue;
+    if (meeting && meetingKey_(r[1]) !== String(meeting).trim()) continue;
     rows.push({
       time: fmt_(r[0]),
-      meeting: String(r[1]),
+      meeting: meetingKey_(r[1]),
       name: String(r[2]),
       role: String(r[3] || ""),
       source: String(r[4] || "")
@@ -90,6 +102,6 @@ function checkin_(p) {
 }
 
 function fmt_(d) {
-  if (!(d instanceof Date)) return String(d || "");
+  if (!isDate_(d)) return String(d || "");
   return Utilities.formatDate(d, TZ, "yyyy-MM-dd HH:mm");
 }
